@@ -7,7 +7,7 @@
     "order": 3,
     "category": "landing",
     "theme": "dark",
-    "accent": "#7b8cff",
+    "accent": "#e6e7eb",
     "pages": [
         "Home",
         "Features",

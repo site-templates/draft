@@ -21,7 +21,7 @@
         <div class="mt-14 grid gap-4 lg:grid-cols-3">
             @foreach ($items as $plan)
                 @if ($plan->featured)
-                    <div class="relative rounded-2xl border border-accent/50 bg-panel p-8 shadow-[0_0_60px_-20px_rgba(123,140,255,0.35)]" data-reveal>
+                    <div class="relative rounded-2xl border border-ink/35 bg-panel p-8 shadow-[0_0_60px_-24px_rgba(255,255,255,0.25)]" data-reveal>
                         <span class="absolute -top-3 right-6 rounded-full border border-accent/40 bg-accent-soft px-3 py-1 text-xs font-medium text-accent">{{ $plan->badge }}</span>
 
                         <h3 class="text-[15px] font-medium text-ink">{{ $plan->name }}</h3>
@@ -32,7 +32,7 @@
                             <span class="text-sm text-faint">{{ $plan->period }}</span>
                         </p>
 
-                        <a href="{{ $plan->buttonLink }}" class="mt-7 flex justify-center rounded-lg bg-accent px-4 py-2.5 text-sm font-medium text-[#0b0c22] transition-all duration-200 hover:brightness-110">{{ $plan->buttonText }}</a>
+                        <a href="{{ $plan->buttonLink }}" class="mt-7 flex justify-center rounded-lg bg-ink px-4 py-2.5 text-sm font-medium text-canvas transition-colors duration-200 hover:bg-white">{{ $plan->buttonText }}</a>
 
                         <ul role="list" class="mt-8 flex flex-col gap-3 border-t border-line pt-7 text-sm text-muted">
                             @foreach ($plan->features as $feature)

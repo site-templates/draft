@@ -67,13 +67,13 @@
 
             @if ($align == 'left')
                 <div class="relative lg:order-first" data-reveal>
-                    <div class="pointer-events-none absolute -inset-6 rounded-[2rem] bg-accent/8 blur-2xl"></div>
-                    <img src="{{ $image }}" alt="{{ $imageAlt }}" class="relative aspect-[4/3] w-full rounded-2xl border border-line object-cover shadow-2xl shadow-black/40" loading="lazy">
+                    <div class="pointer-events-none absolute -inset-6 rounded-[2rem] bg-white/[0.04] blur-2xl"></div>
+                    <img src="{{ $image }}" alt="{{ $imageAlt }}" class="relative aspect-[4/3] w-full rounded-2xl border border-line object-cover grayscale shadow-2xl shadow-black/40" loading="lazy">
                 </div>
             @else
                 <div class="relative" data-reveal>
-                    <div class="pointer-events-none absolute -inset-6 rounded-[2rem] bg-accent/8 blur-2xl"></div>
-                    <img src="{{ $image }}" alt="{{ $imageAlt }}" class="relative aspect-[4/3] w-full rounded-2xl border border-line object-cover shadow-2xl shadow-black/40" loading="lazy">
+                    <div class="pointer-events-none absolute -inset-6 rounded-[2rem] bg-white/[0.04] blur-2xl"></div>
+                    <img src="{{ $image }}" alt="{{ $imageAlt }}" class="relative aspect-[4/3] w-full rounded-2xl border border-line object-cover grayscale shadow-2xl shadow-black/40" loading="lazy">
                 </div>
             @endif
 
