@@ -1,0 +1,27 @@
+title: Call to action
+description: The glowing closing panel — heading, copy, and two actions
+fields:
+    heading:
+        type: text
+        label: Heading
+        default: "Ship your next release with Draft"
+    body:
+        type: textarea
+        label: Supporting copy
+        default: "Set up a workspace in under two minutes. Import from your current tracker with one command."
+    buttonText:
+        type: text
+        label: Primary button text
+        default: "Start building"
+    buttonLink:
+        type: url
+        label: Primary button link
+        default: "/pricing"
+    secondaryText:
+        type: text
+        label: Secondary button text
+        default: "Read the docs"
+    secondaryLink:
+        type: url
+        label: Secondary button link
+        default: "/docs"

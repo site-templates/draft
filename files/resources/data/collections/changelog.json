@@ -1,0 +1,67 @@
+[
+    {
+        "version": "2.4.0",
+        "date": "Feb 26, 2026",
+        "title": "Agent review queue",
+        "body": "Agent proposals now land in a single review queue instead of scattering across issues, so accepting a morning of triage takes one pass.",
+        "items": [
+            "New Queue view lists every pending agent proposal with a diff-style preview",
+            "Bulk accept and dismiss with shift-click or the J and K keys",
+            "Duplicate suggestions now show why two issues matched",
+            "Fixed a race where two editors accepting the same proposal created a copy"
+        ],
+        "tags": ["Agents", "Triage"]
+    },
+    {
+        "version": "2.3.0",
+        "date": "Feb 12, 2026",
+        "title": "Draft Agents",
+        "body": "Agents join the workspace: duplicate detection, suggested owners, and release-note drafts — always as proposals, never silent edits.",
+        "items": [
+            "Duplicate detection runs on every new issue and links likely matches",
+            "Suggested owner and severity appear in the issue peek panel",
+            "Release notes assemble automatically from a release's merged work",
+            "Per-team controls decide which agents run and who reviews them"
+        ],
+        "tags": ["Agents", "Releases"]
+    },
+    {
+        "version": "2.2.0",
+        "date": "Jan 29, 2026",
+        "title": "Changelog domains and digests",
+        "body": "Your changelog can now live on your own domain and land in your customers' inboxes without leaving Draft.",
+        "items": [
+            "Custom domains with automatic certificates on Pro and above",
+            "Weekly email digest with per-subscriber frequency controls",
+            "RSS and JSON feeds for every public changelog",
+            "New compact layout for entries with many small fixes"
+        ],
+        "tags": ["Changelog", "Pro"]
+    },
+    {
+        "version": "2.1.0",
+        "date": "Jan 22, 2026",
+        "title": "Faster boards, calmer notifications",
+        "body": "A quality pass across the app: board rendering rewritten for large teams, and notifications that batch instead of buzz.",
+        "items": [
+            "Boards with 1,000+ issues now scroll at a steady 120 frames per second",
+            "Notifications group by issue and quiet themselves during focus hours",
+            "Cycle burndown charts gained a scope-change overlay",
+            "Fixed keyboard focus escaping the peek panel on Escape"
+        ],
+        "tags": ["Performance", "Quality"]
+    },
+    {
+        "version": "2.0.0",
+        "date": "Jan 20, 2026",
+        "title": "Draft 2.0",
+        "body": "The new foundation: a local-first sync engine, a rebuilt renderer, and offline that actually works. Everything this year builds on this release.",
+        "items": [
+            "Local-first store — every read and write hits your machine first",
+            "Median cross-region sync latency cut to 50 milliseconds",
+            "Full offline mode with conflict-free merges when you reconnect",
+            "One-command import from the trackers you already use"
+        ],
+        "tags": ["Platform", "Sync"]
+    }
+]

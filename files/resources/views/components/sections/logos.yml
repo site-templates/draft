@@ -1,0 +1,7 @@
+title: Logo strip
+description: The social-proof row — a caption and the customer logos from the logos collection
+fields:
+    heading:
+        type: text
+        label: Caption
+        default: "Powering product teams at"

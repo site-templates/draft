@@ -1,0 +1,160 @@
+@props([
+    'brand' => 'Draft',
+    'signInText' => 'Sign in',
+    'signInLink' => '#',
+    'ctaText' => 'Get started',
+    'ctaLink' => '/pricing',
+])
+<!--
+    The site-wide top bar. It rests transparent over each page's opening
+    section; once you scroll, main.js sets data-scrolled and site.css fades in
+    the glass background and hairline.
+
+    The Resources item is the mega-dropdown: hover opens it with a short intent
+    delay (so diagonal pointer travel never slams it shut), click toggles it on
+    touch, Escape dismisses. All of that lives in public/js/main.js.
+-->
+<header id="header" class="fixed inset-x-0 top-0 z-50">
+    <div class="mx-auto flex h-16 w-full max-w-6xl items-center gap-8 px-6">
+
+        <!-- href="/" always points to your site's root, in preview and when published -->
+        <a href="/" aria-label="Homepage" class="flex shrink-0 items-center gap-2.5">
+            <svg viewBox="0 0 64 64" class="size-6 shrink-0" aria-hidden="true">
+                <rect width="64" height="64" rx="16" class="fill-raised"/>
+                <rect x="1" y="1" width="62" height="62" rx="15" class="fill-none stroke-accent/40" stroke-width="2"/>
+                <path d="M22 18h12c8.284 0 15 6.268 15 14s-6.716 14-15 14H22V18Zm7 6.5v15h5c4.694 0 8.5-3.358 8.5-7.5s-3.806-7.5-8.5-7.5h-5Z" class="fill-accent"/>
+            </svg>
+            <span class="text-[15px] font-semibold tracking-tight">{{ $brand }}</span>
+        </a>
+
+        <!-- Primary links -->
+        <nav class="max-lg:hidden" aria-label="Main">
+            <ul role="list" class="flex items-center gap-1 text-sm text-muted">
+                <li>
+                    <a href="/features" class="rounded-lg px-3 py-2 transition-colors duration-200 hover:text-ink aria-[current]:text-ink">Features</a>
+                </li>
+                <li>
+                    <a href="/pricing" class="rounded-lg px-3 py-2 transition-colors duration-200 hover:text-ink aria-[current]:text-ink">Pricing</a>
+                </li>
+
+                <!-- The Resources mega-dropdown -->
+                <li class="relative" data-dropdown>
+                    <button
+                        type="button"
+                        data-dropdown-trigger
+                        aria-expanded="false"
+                        class="flex cursor-pointer items-center gap-1 rounded-lg px-3 py-2 transition-colors duration-200 hover:text-ink">
+                        Resources
+                        <svg viewBox="0 0 16 16" class="dropdown-caret size-3.5 fill-current opacity-60" aria-hidden="true">
+                            <path fill-rule="evenodd" d="M4.22 6.22a.75.75 0 0 1 1.06 0L8 8.94l2.72-2.72a.75.75 0 1 1 1.06 1.06l-3.25 3.25a.75.75 0 0 1-1.06 0L4.22 7.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd"/>
+                        </svg>
+                    </button>
+
+                    <div data-dropdown-panel class="absolute left-1/2 top-full w-[36rem] -translate-x-1/2 pt-3">
+                        <div class="grid grid-cols-[1.15fr_1fr] gap-1 rounded-2xl border border-line bg-panel/95 p-1.5 shadow-2xl shadow-black/50 backdrop-blur-xl">
+
+                            <!-- Left: the resource destinations -->
+                            <div class="flex flex-col gap-0.5 p-1">
+                                <a href="/updates" class="group flex items-start gap-3.5 rounded-xl p-3 transition-colors duration-200 hover:bg-raised">
+                                    <span class="mt-0.5 flex size-8 shrink-0 items-center justify-center rounded-lg border border-line bg-raised text-muted transition-colors duration-200 group-hover:border-accent/40 group-hover:text-accent">
+                                        <svg viewBox="0 0 20 20" class="size-4 fill-current" aria-hidden="true">
+                                            <path d="M3.5 3A1.5 1.5 0 0 0 2 4.5v11A1.5 1.5 0 0 0 3.5 17h13a1.5 1.5 0 0 0 1.5-1.5v-11A1.5 1.5 0 0 0 16.5 3h-13ZM5 6.75A.75.75 0 0 1 5.75 6h8.5a.75.75 0 0 1 0 1.5h-8.5A.75.75 0 0 1 5 6.75ZM5.75 9.5a.75.75 0 0 0 0 1.5h8.5a.75.75 0 0 0 0-1.5h-8.5Zm0 3.5a.75.75 0 0 0 0 1.5h4.5a.75.75 0 0 0 0-1.5h-4.5Z"/>
+                                        </svg>
+                                    </span>
+                                    <span>
+                                        <span class="block text-sm font-medium text-ink">Updates</span>
+                                        <span class="mt-0.5 block text-[13px] leading-snug text-muted">Stories, releases, and ideas from the team</span>
+                                    </span>
+                                </a>
+
+                                <a href="/changelog" class="group flex items-start gap-3.5 rounded-xl p-3 transition-colors duration-200 hover:bg-raised">
+                                    <span class="mt-0.5 flex size-8 shrink-0 items-center justify-center rounded-lg border border-line bg-raised text-muted transition-colors duration-200 group-hover:border-accent/40 group-hover:text-accent">
+                                        <svg viewBox="0 0 20 20" class="size-4 fill-current" aria-hidden="true">
+                                            <path fill-rule="evenodd" d="M10 2a8 8 0 1 0 8 8 .75.75 0 0 1 1.5 0A9.5 9.5 0 1 1 10 .5a.75.75 0 0 1 0 1.5Zm.75 4.25a.75.75 0 0 0-1.5 0v4.06c0 .199.079.39.22.53l2.5 2.5a.75.75 0 1 0 1.06-1.06l-2.28-2.28V6.25Zm5.03-3.53a.75.75 0 0 1 1.06 0l.72.72.72-.72a.75.75 0 1 1 1.06 1.06l-.72.72.72.72a.75.75 0 1 1-1.06 1.06l-.72-.72-.72.72a.75.75 0 1 1-1.06-1.06l.72-.72-.72-.72a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd"/>
+                                        </svg>
+                                    </span>
+                                    <span>
+                                        <span class="block text-sm font-medium text-ink">Changelog</span>
+                                        <span class="mt-0.5 block text-[13px] leading-snug text-muted">New features and fixes, shipped weekly</span>
+                                    </span>
+                                </a>
+
+                                <a href="/docs" class="group flex items-start gap-3.5 rounded-xl p-3 transition-colors duration-200 hover:bg-raised">
+                                    <span class="mt-0.5 flex size-8 shrink-0 items-center justify-center rounded-lg border border-line bg-raised text-muted transition-colors duration-200 group-hover:border-accent/40 group-hover:text-accent">
+                                        <svg viewBox="0 0 20 20" class="size-4 fill-current" aria-hidden="true">
+                                            <path d="M10.75 16.82A7.462 7.462 0 0 1 15 15.5c.71 0 1.396.098 2.046.282A.75.75 0 0 0 18 15.06v-11a.75.75 0 0 0-.546-.721A9.006 9.006 0 0 0 15 3a8.963 8.963 0 0 0-4.25 1.065V16.82ZM9.25 4.065A8.963 8.963 0 0 0 5 3c-.85 0-1.673.118-2.454.339A.75.75 0 0 0 2 4.06v11a.75.75 0 0 0 .954.721A7.506 7.506 0 0 1 5 15.5c1.579 0 3.042.487 4.25 1.32V4.065Z"/>
+                                        </svg>
+                                    </span>
+                                    <span>
+                                        <span class="block text-sm font-medium text-ink">Docs</span>
+                                        <span class="mt-0.5 block text-[13px] leading-snug text-muted">Guides and reference for getting set up</span>
+                                    </span>
+                                </a>
+                            </div>
+
+                            <!-- Right: the latest from Updates -->
+                            <div class="flex flex-col rounded-xl bg-raised/60 p-4">
+                                <p class="font-mono text-[11px] font-medium tracking-widest text-faint uppercase">Latest</p>
+
+                                <a href="/updates/introducing-draft-agents" class="group mt-3 block">
+                                    <span class="block overflow-hidden rounded-lg border border-line">
+                                        <img src="https://assets.ui.sh/wallpapers/silk.webp?variant=midnight-violet" alt="" class="aspect-video w-full object-cover transition-transform duration-500 group-hover:scale-[1.04]" loading="lazy">
+                                    </span>
+                                    <span class="mt-2.5 block text-[13px] font-medium leading-snug text-ink transition-colors duration-200 group-hover:text-accent">Introducing Draft Agents</span>
+                                    <span class="mt-0.5 block text-xs text-faint">Feb 12, 2026</span>
+                                </a>
+
+                                <a href="/updates" class="group mt-auto inline-flex items-center gap-1 pt-4 text-[13px] font-medium text-muted transition-colors duration-200 hover:text-ink">
+                                    All updates
+                                    <svg viewBox="0 0 16 16" class="size-3.5 fill-current transition-transform duration-200 group-hover:translate-x-0.5" aria-hidden="true">
+                                        <path fill-rule="evenodd" d="M2 8a.75.75 0 0 1 .75-.75h8.69L8.22 4.03a.75.75 0 0 1 1.06-1.06l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 0 1-1.06-1.06l3.22-3.22H2.75A.75.75 0 0 1 2 8Z" clip-rule="evenodd"/>
+                                    </svg>
+                                </a>
+                            </div>
+
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Right side: sign in + CTA -->
+        <div class="ml-auto flex items-center gap-2.5 max-lg:hidden">
+            <a href="{{ $signInLink }}" class="rounded-lg px-3 py-2 text-sm text-muted transition-colors duration-200 hover:text-ink">{{ $signInText }}</a>
+            <a href="{{ $ctaLink }}" class="rounded-lg bg-ink px-3.5 py-2 text-sm font-medium text-canvas shadow-[0_0_0_1px_rgba(255,255,255,0.06),0_8px_24px_-12px_rgba(123,140,255,0.5)] transition-all duration-200 hover:bg-white hover:shadow-[0_0_0_1px_rgba(255,255,255,0.1),0_10px_28px_-10px_rgba(123,140,255,0.65)]">{{ $ctaText }}</a>
+        </div>
+
+        <!-- Mobile: hamburger -->
+        <button
+            type="button"
+            data-mobile-toggle
+            aria-expanded="false"
+            aria-label="Toggle menu"
+            class="ml-auto flex size-10 cursor-pointer items-center justify-center rounded-lg text-ink transition-colors duration-200 hover:bg-raised lg:hidden">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" class="size-5 stroke-current [.menu-open_&]:hidden" aria-hidden="true">
+                <path stroke-linecap="round" d="M3.75 7h16.5M3.75 12h16.5M3.75 17h16.5"/>
+            </svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" class="hidden size-5 stroke-current [.menu-open_&]:block" aria-hidden="true">
+                <path stroke-linecap="round" d="M6 18 18 6M6 6l12 12"/>
+            </svg>
+        </button>
+
+    </div>
+
+    <!-- The mobile sheet -->
+    <div data-mobile-panel class="border-b border-line bg-canvas/90 backdrop-blur-xl lg:hidden">
+        <nav class="mx-auto w-full max-w-6xl px-6 py-4" aria-label="Mobile">
+            <ul role="list" class="flex flex-col text-base">
+                <li><a href="/features" class="flex rounded-lg px-3 py-2.5 text-ink hover:bg-raised">Features</a></li>
+                <li><a href="/pricing" class="flex rounded-lg px-3 py-2.5 text-ink hover:bg-raised">Pricing</a></li>
+                <li><a href="/updates" class="flex rounded-lg px-3 py-2.5 text-ink hover:bg-raised">Updates</a></li>
+                <li><a href="/changelog" class="flex rounded-lg px-3 py-2.5 text-ink hover:bg-raised">Changelog</a></li>
+                <li><a href="/docs" class="flex rounded-lg px-3 py-2.5 text-ink hover:bg-raised">Docs</a></li>
+            </ul>
+            <div class="mt-4 flex items-center gap-3 border-t border-line pt-4">
+                <a href="{{ $signInLink }}" class="flex-1 rounded-lg border border-line px-4 py-2.5 text-center text-sm text-ink hover:bg-raised">{{ $signInText }}</a>
+                <a href="{{ $ctaLink }}" class="flex-1 rounded-lg bg-ink px-4 py-2.5 text-center text-sm font-medium text-canvas hover:bg-white">{{ $ctaText }}</a>
+            </div>
+        </nav>
+    </div>
+</header>

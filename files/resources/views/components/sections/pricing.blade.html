@@ -1,0 +1,80 @@
+@props([
+    'eyebrow' => 'Pricing',
+    'heading' => 'Start free. Scale when it sticks.',
+    'body' => 'Every plan includes unlimited issues, the public changelog, and the fastest sync engine in the category.',
+    'items',
+])
+<!--
+    Three plan cards from resources/data/collections/plans.json. A plan with
+    featured set to true gets the accent treatment and its badge. Each plan's
+    feature list is an array inside the collection item.
+-->
+<section id="pricing" class="py-20 sm:py-28">
+    <div class="mx-auto w-full max-w-6xl px-6">
+
+        <div class="mx-auto max-w-2xl text-center" data-reveal>
+            <p class="font-mono text-[11px] font-medium tracking-widest text-accent uppercase">{{ $eyebrow }}</p>
+            <h2 class="mt-4 text-3xl font-semibold tracking-tight text-balance sm:text-[2.5rem] sm:leading-[1.15]">{{ $heading }}</h2>
+            <p class="mt-4 text-lg/8 text-pretty text-muted">{{ $body }}</p>
+        </div>
+
+        <div class="mt-14 grid gap-4 lg:grid-cols-3">
+            @foreach ($items as $plan)
+                @if ($plan->featured)
+                    <div class="relative rounded-2xl border border-accent/50 bg-panel p-8 shadow-[0_0_60px_-20px_rgba(123,140,255,0.35)]" data-reveal>
+                        <span class="absolute -top-3 right-6 rounded-full border border-accent/40 bg-accent-soft px-3 py-1 text-xs font-medium text-accent">{{ $plan->badge }}</span>
+
+                        <h3 class="text-[15px] font-medium text-ink">{{ $plan->name }}</h3>
+                        <p class="mt-1.5 text-sm text-muted">{{ $plan->blurb }}</p>
+
+                        <p class="mt-6 flex items-baseline gap-1.5">
+                            <span class="font-mono text-5xl font-medium tracking-tight text-ink">{{ $plan->price }}</span>
+                            <span class="text-sm text-faint">{{ $plan->period }}</span>
+                        </p>
+
+                        <a href="{{ $plan->buttonLink }}" class="mt-7 flex justify-center rounded-lg bg-accent px-4 py-2.5 text-sm font-medium text-[#0b0c22] transition-all duration-200 hover:brightness-110">{{ $plan->buttonText }}</a>
+
+                        <ul role="list" class="mt-8 flex flex-col gap-3 border-t border-line pt-7 text-sm text-muted">
+                            @foreach ($plan->features as $feature)
+                                <li class="flex items-start gap-3">
+                                    <svg viewBox="0 0 20 20" class="mt-0.5 size-4 shrink-0 fill-accent" aria-hidden="true">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm3.857-9.809a.75.75 0 0 0-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 1 0-1.06 1.061l2.5 2.5a.75.75 0 0 0 1.137-.089l4-5.5Z" clip-rule="evenodd"/>
+                                    </svg>
+                                    {{ $feature }}
+                                </li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @else
+                    <div class="rounded-2xl border border-line bg-panel p-8 transition-colors duration-300 hover:border-[#33363e]" data-reveal>
+                        <h3 class="text-[15px] font-medium text-ink">{{ $plan->name }}</h3>
+                        <p class="mt-1.5 text-sm text-muted">{{ $plan->blurb }}</p>
+
+                        <p class="mt-6 flex items-baseline gap-1.5">
+                            <span class="font-mono text-5xl font-medium tracking-tight text-ink">{{ $plan->price }}</span>
+                            <span class="text-sm text-faint">{{ $plan->period }}</span>
+                        </p>
+
+                        <a href="{{ $plan->buttonLink }}" class="mt-7 flex justify-center rounded-lg border border-line bg-raised px-4 py-2.5 text-sm font-medium text-ink transition-colors duration-200 hover:border-faint">{{ $plan->buttonText }}</a>
+
+                        <ul role="list" class="mt-8 flex flex-col gap-3 border-t border-line pt-7 text-sm text-muted">
+                            @foreach ($plan->features as $feature)
+                                <li class="flex items-start gap-3">
+                                    <svg viewBox="0 0 20 20" class="mt-0.5 size-4 shrink-0 fill-faint" aria-hidden="true">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm3.857-9.809a.75.75 0 0 0-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 1 0-1.06 1.061l2.5 2.5a.75.75 0 0 0 1.137-.089l4-5.5Z" clip-rule="evenodd"/>
+                                    </svg>
+                                    {{ $feature }}
+                                </li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
+            @endforeach
+        </div>
+
+        <p class="mt-10 text-center text-sm text-faint" data-reveal>
+            Annual billing saves two months. Nonprofits and open-source projects ship free — <a href="#" class="text-muted underline decoration-line underline-offset-4 transition-colors duration-200 hover:text-ink">talk to us</a>.
+        </p>
+
+    </div>
+</section>

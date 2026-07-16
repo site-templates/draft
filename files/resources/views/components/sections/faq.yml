@@ -1,0 +1,15 @@
+title: FAQ
+description: Accordion of questions from the faq collection
+fields:
+    eyebrow:
+        type: text
+        label: Eyebrow
+        default: "FAQ"
+    heading:
+        type: text
+        label: Heading
+        default: "Answers, before you ask"
+    body:
+        type: textarea
+        label: Supporting copy
+        default: "The questions every team runs through before switching. Something missing? The docs go deeper."

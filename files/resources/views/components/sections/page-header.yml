@@ -1,0 +1,16 @@
+title: Page header
+description: The interior-page opener — eyebrow, headline, and optional context line
+fields:
+    eyebrow:
+        type: text
+        label: Eyebrow
+        default: "Page"
+    heading:
+        type: text
+        label: Heading
+        default: "Page heading"
+    body:
+        type: textarea
+        label: Supporting copy
+        description: Leave empty to hide.
+        default: ""

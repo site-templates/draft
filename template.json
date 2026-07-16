@@ -1,0 +1,19 @@
+{
+    "name": "Draft",
+    "dialect": "blade",
+    "description": "A dark, Linear-grade SaaS site — glass nav with a mega-dropdown, a CSS-built product mock, bento features, an Updates journal, a changelog, and a mini docs hub.",
+    "icon": "✏️",
+    "repo": "https://github.com/site-templates/draft",
+    "order": 3,
+    "category": "landing",
+    "theme": "dark",
+    "accent": "#7b8cff",
+    "pages": [
+        "Home",
+        "Features",
+        "Pricing",
+        "Updates",
+        "Changelog",
+        "Docs"
+    ]
+}

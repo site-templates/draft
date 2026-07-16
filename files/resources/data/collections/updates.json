@@ -1,0 +1,62 @@
+[
+    {
+        "title": "Introducing Draft Agents",
+        "description": "Triage, duplicates, and release notes — handled by agents that propose instead of act. Here's how we built assistance you can actually trust.",
+        "category": "Product",
+        "date": "Feb 12, 2026",
+        "readTime": "5 min read",
+        "author": "Mara Chen",
+        "authorImage": "https://assets.ui.sh/avatars/2.webp?size=160",
+        "link": "/updates/introducing-draft-agents",
+        "image": "https://assets.ui.sh/wallpapers/silk.webp?variant=midnight-violet",
+        "imageAlt": ""
+    },
+    {
+        "title": "Draft 2.0: a new foundation",
+        "description": "A rebuilt sync engine, a faster renderer, and the groundwork for everything we ship this year. The full story of the rewrite.",
+        "category": "Company",
+        "date": "Jan 20, 2026",
+        "readTime": "7 min read",
+        "author": "Eli Ambrose",
+        "authorImage": "https://assets.ui.sh/avatars/5.webp?size=160",
+        "link": "/updates/draft-2-a-new-foundation",
+        "image": "https://assets.ui.sh/wallpapers/silk.webp?variant=sapphire-flux",
+        "imageAlt": ""
+    },
+    {
+        "title": "How Northwind ships twice a week with Draft",
+        "description": "A 140-person team, four product lines, one tracker. Northwind's platform lead on cycles, agents, and the meeting they deleted.",
+        "category": "Customers",
+        "date": "Dec 9, 2025",
+        "readTime": "6 min read",
+        "author": "Sofia Marek",
+        "authorImage": "https://assets.ui.sh/avatars/11.webp?size=160",
+        "link": "/updates/how-northwind-ships-with-draft",
+        "image": "https://assets.ui.sh/wallpapers/silk.webp?variant=platinum-flow",
+        "imageAlt": ""
+    },
+    {
+        "title": "Designing the command menu",
+        "description": "The fastest interface is the one you never leave. Design notes on latency budgets, fuzzy matching, and earning the K in command-K.",
+        "category": "Design",
+        "date": "Nov 18, 2025",
+        "readTime": "4 min read",
+        "author": "Jonas Petersen",
+        "authorImage": "https://assets.ui.sh/avatars/8.webp?size=160",
+        "link": "/updates/designing-the-command-menu",
+        "image": "https://assets.ui.sh/wallpapers/silk.webp?variant=cyan-glacier",
+        "imageAlt": ""
+    },
+    {
+        "title": "The case for a public changelog",
+        "description": "Shipping in silence is shipping half the feature. Why we think the changelog is a product surface, not a compliance chore.",
+        "category": "Ideas",
+        "date": "Oct 28, 2025",
+        "readTime": "4 min read",
+        "author": "Priya Raghavan",
+        "authorImage": "https://assets.ui.sh/avatars/14.webp?size=160",
+        "link": "/updates/the-case-for-a-public-changelog",
+        "image": "https://assets.ui.sh/wallpapers/silk.webp?variant=emerald-glint",
+        "imageAlt": ""
+    }
+]

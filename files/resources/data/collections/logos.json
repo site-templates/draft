@@ -1,0 +1,26 @@
+[
+    {
+        "name": "Align",
+        "image": "https://assets.ui.sh/logos/align.svg?color=%239a9fa8"
+    },
+    {
+        "name": "Artifact",
+        "image": "https://assets.ui.sh/logos/artifact.svg?color=%239a9fa8"
+    },
+    {
+        "name": "Axiom",
+        "image": "https://assets.ui.sh/logos/axiom.svg?color=%239a9fa8"
+    },
+    {
+        "name": "Looply",
+        "image": "https://assets.ui.sh/logos/looply.svg?color=%239a9fa8"
+    },
+    {
+        "name": "Orbital",
+        "image": "https://assets.ui.sh/logos/orbital.svg?color=%239a9fa8"
+    },
+    {
+        "name": "Relay",
+        "image": "https://assets.ui.sh/logos/relay.svg?color=%239a9fa8"
+    }
+]

@@ -1,0 +1,52 @@
+title: Feature spotlight
+description: A copy-and-art split — flip the image side per instance to zigzag down the page
+fields:
+    eyebrow:
+        type: text
+        label: Eyebrow
+        default: "Workflow"
+    heading:
+        type: text
+        label: Heading
+        default: "Built around your cycle"
+    body:
+        type: textarea
+        label: Supporting copy
+        default: "Scope the week, not the quarter. Cycles keep the team pointed at what ships next, and everything else waits its turn in a triaged backlog."
+    pointOne:
+        type: text
+        label: Point one
+        description: Optional checked line. Leave empty to hide.
+        default: ""
+    pointTwo:
+        type: text
+        label: Point two
+        default: ""
+    pointThree:
+        type: text
+        label: Point three
+        default: ""
+    linkText:
+        type: text
+        label: Link text
+        description: Leave empty to hide the link.
+        default: "Learn more"
+    linkHref:
+        type: url
+        label: Link target
+        default: "/features"
+    image:
+        type: image
+        label: Artwork
+        default: "https://assets.ui.sh/wallpapers/silk.webp?variant=midnight-violet"
+    imageAlt:
+        type: text
+        label: Artwork alt text
+        default: ""
+    align:
+        type: select
+        label: Image side
+        options:
+            right: Image on the right
+            left: Image on the left
+        default: "right"

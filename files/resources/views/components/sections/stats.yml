@@ -1,0 +1,11 @@
+title: Stats
+description: Four proof points on a rail — the numbers come from the stats collection
+fields:
+    eyebrow:
+        type: text
+        label: Eyebrow
+        default: "By the numbers"
+    heading:
+        type: text
+        label: Heading
+        default: "Speed you can measure"

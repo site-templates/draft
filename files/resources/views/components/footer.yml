@@ -1,0 +1,11 @@
+title: Footer
+description: The site-wide footer — brand column, link columns, and the legal line
+fields:
+    tagline:
+        type: textarea
+        label: Tagline
+        default: "The system of record for teams that ship."
+    copyright:
+        type: text
+        label: Copyright line
+        default: "© 2026 Draft Systems, Inc."

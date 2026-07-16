@@ -1,0 +1,37 @@
+@props([
+    'eyebrow' => 'Customers',
+    'heading' => 'Loved by teams that hate slow tools',
+    'items',
+])
+<!--
+    Quote cards in a masonry flow — the quotes live in
+    resources/data/collections/testimonials.json. Each card is a
+    spotlight-card, so the accent bloom follows the cursor.
+-->
+<section id="testimonials" class="py-20 sm:py-28">
+    <div class="mx-auto w-full max-w-6xl px-6">
+
+        <div class="mx-auto max-w-2xl text-center" data-reveal>
+            <p class="font-mono text-[11px] font-medium tracking-widest text-accent uppercase">{{ $eyebrow }}</p>
+            <h2 class="mt-4 text-3xl font-semibold tracking-tight text-balance sm:text-[2.5rem] sm:leading-[1.15]">{{ $heading }}</h2>
+        </div>
+
+        <div class="mt-14 columns-1 gap-4 sm:columns-2 lg:columns-3">
+            @foreach ($items as $item)
+                <figure class="spotlight-card mb-4 break-inside-avoid rounded-2xl border border-line bg-panel p-7 transition-colors duration-300 hover:border-[#33363e]" data-reveal>
+                    <blockquote class="text-[15px]/7 text-pretty text-ink/90">
+                        “{{ $item->quote }}”
+                    </blockquote>
+                    <figcaption class="mt-6 flex items-center gap-3">
+                        <img src="{{ $item->avatar }}" alt="" class="size-9 rounded-full object-cover outline-1 -outline-offset-1 outline-white/10" loading="lazy">
+                        <div class="text-sm">
+                            <p class="font-medium text-ink">{{ $item->name }}</p>
+                            <p class="text-faint">{{ $item->role }}, {{ $item->company }}</p>
+                        </div>
+                    </figcaption>
+                </figure>
+            @endforeach
+        </div>
+
+    </div>
+</section>

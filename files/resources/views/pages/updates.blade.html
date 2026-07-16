@@ -1,0 +1,23 @@
+<!--
+    Updates index — served at "/updates". The cards come from
+    resources/data/collections/updates.json; each post is a real page under
+    pages/updates/{slug}.blade.html — add the page, then add its card there.
+-->
+<x-layouts.main title="Updates" description="Stories, releases, and ideas from the Draft team — what we shipped, what we learned, and where the product is headed.">
+
+    <x-sections.page-header
+        eyebrow="Updates"
+        heading="News from the workshop"
+        body="What we shipped, what we learned, and where Draft is headed — written by the people building it." />
+
+    <x-sections.updates-grid :items="$updates" />
+
+    <x-sections.cta
+        heading="Never miss a release"
+        body="The changelog has an RSS feed and an email digest — pick your channel and we'll meet you there."
+        buttonText="Browse the changelog"
+        buttonLink="/changelog"
+        secondaryText="Start free"
+        secondaryLink="/pricing" />
+
+</x-layouts.main>

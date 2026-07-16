@@ -1,0 +1,46 @@
+<!--
+    The homepage. It lives at pages/index.blade.html, so it's served at "/".
+    The page is a list of sections: each tag pulls a component from
+    resources/views/components/sections/ and fills its props with these
+    attributes. In Visual mode you can select, reorder, and edit them
+    on the canvas.
+-->
+<x-layouts.main title="Plan. Ship. Announce." description="Draft is the system of record for product work — issues, cycles, releases, and the changelog your customers actually read.">
+
+    <x-sections.hero />
+
+    <x-sections.logos :items="$logos" />
+
+    <x-sections.features :items="$features" />
+
+    <x-sections.split
+        eyebrow="Releases"
+        heading="From merged to announced in minutes"
+        body="Group a cycle's work into a release and Draft assembles the notes from what actually shipped. Review, polish, publish — your changelog, your domain, your customers' inboxes."
+        pointOne="Release notes drafted from merged work"
+        pointTwo="Publish to a hosted changelog on your domain"
+        pointThree="RSS and email digests, built in"
+        linkText="See the changelog in action"
+        linkHref="/changelog"
+        image="https://assets.ui.sh/wallpapers/silk.webp?variant=sapphire-flux"
+        align="right" />
+
+    <x-sections.split
+        eyebrow="Agents"
+        heading="Assistance that asks first"
+        body="Draft Agents watch the queue so your team doesn't have to: likely duplicates get linked, new issues arrive with a suggested owner, and release notes write their own first draft. Every action is a proposal a human approves."
+        pointOne="Duplicate detection on every new issue"
+        pointTwo="Suggested owners and severity in triage"
+        pointThree="A single review queue for every proposal"
+        linkText="Read the Agents announcement"
+        linkHref="/updates/introducing-draft-agents"
+        image="https://assets.ui.sh/wallpapers/silk.webp?variant=midnight-violet"
+        align="left" />
+
+    <x-sections.stats :items="$stats" />
+
+    <x-sections.testimonials :items="$testimonials" />
+
+    <x-sections.cta />
+
+</x-layouts.main>

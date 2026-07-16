@@ -1,0 +1,47 @@
+# Field labels for the post layout's chrome. Each post page passes these as
+# attributes on its x-layouts.post tag; the body itself is authored markup.
+title: Post layout
+description: The shared chrome around an Updates post — category, title, byline, and lead image
+fields:
+    title:
+        type: text
+        label: Title
+        default: ""
+    description:
+        type: textarea
+        label: Summary
+        description: Shown under the title and used as the meta description.
+        default: ""
+    category:
+        type: text
+        label: Category
+        default: "Updates"
+    date:
+        type: text
+        label: Date
+        default: ""
+    readTime:
+        type: text
+        label: Read time
+        default: ""
+    author:
+        type: text
+        label: Author
+        default: ""
+    authorRole:
+        type: text
+        label: Author role
+        default: ""
+    authorImage:
+        type: image
+        label: Author photo
+        default: ""
+    image:
+        type: image
+        label: Lead image
+        description: Leave empty to publish without a lead image.
+        default: ""
+    imageAlt:
+        type: text
+        label: Lead image alt text
+        default: ""

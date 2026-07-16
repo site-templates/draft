@@ -1,0 +1,15 @@
+title: Features
+description: The bento grid — heading plus the feature cards from the features collection
+fields:
+    eyebrow:
+        type: text
+        label: Eyebrow
+        default: "Features"
+    heading:
+        type: text
+        label: Heading
+        default: "Everything a shipping team needs"
+    body:
+        type: textarea
+        label: Supporting copy
+        default: "Draft folds the whole delivery loop — planning, tracking, releasing, announcing — into one fast, keyboard-first surface."

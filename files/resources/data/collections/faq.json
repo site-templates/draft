@@ -1,0 +1,26 @@
+[
+    {
+        "question": "How long does it take to migrate from our current tracker?",
+        "answer": "Most teams finish the same day. The importer maps projects, labels, and history from the majority of popular trackers, runs a dry pass first so you can review the mapping, and keeps your old IDs searchable so muscle memory survives the move."
+    },
+    {
+        "question": "What exactly do Draft Agents do?",
+        "answer": "They handle the toil around the edges: flagging likely duplicates, suggesting an owner and severity for new issues, and assembling release-note drafts from merged work. Every agent action is a proposal you accept or dismiss — agents never edit anything silently."
+    },
+    {
+        "question": "Does Draft work offline?",
+        "answer": "Yes. The whole workspace is local-first: reads and writes hit a store on your machine and sync when a connection returns. A flight, a tunnel, or a flaky hotel network never blocks you from working."
+    },
+    {
+        "question": "Can we host the changelog on our own domain?",
+        "answer": "On the Pro plan and above, point a CNAME at your workspace and the changelog serves from your domain with your branding, an RSS feed, and an email digest your customers can subscribe to."
+    },
+    {
+        "question": "How is our data protected?",
+        "answer": "Everything is encrypted in transit and at rest, workspaces are isolated per customer, and the Business plan adds SAML SSO, SCIM, audit logs, and data residency options. We publish our security practices and run a year-round disclosure program."
+    },
+    {
+        "question": "What happens when we outgrow the Free plan?",
+        "answer": "Nothing dramatic — you keep every issue, cycle, and page of history. Upgrading flips the limits off in place, and downgrading later leaves your data intact and exportable at any time."
+    }
+]

@@ -1,0 +1,55 @@
+[
+    {
+        "name": "Free",
+        "blurb": "For side projects and small teams finding their rhythm.",
+        "price": "$0",
+        "period": "forever",
+        "featured": false,
+        "badge": "",
+        "buttonText": "Start for free",
+        "buttonLink": "#",
+        "features": [
+            "Up to 10 teammates",
+            "Unlimited issues and projects",
+            "Two active cycles",
+            "Public changelog page",
+            "Community support"
+        ]
+    },
+    {
+        "name": "Pro",
+        "blurb": "For teams that ship every week and want the whole loop.",
+        "price": "$12",
+        "period": "per user / month",
+        "featured": true,
+        "badge": "Most popular",
+        "buttonText": "Start 14-day trial",
+        "buttonLink": "#",
+        "features": [
+            "Everything in Free, unlimited",
+            "Draft Agents for triage and duplicates",
+            "Release notes drafted automatically",
+            "Custom changelog domain",
+            "Insights and cycle analytics",
+            "Priority support"
+        ]
+    },
+    {
+        "name": "Business",
+        "blurb": "For organizations that need control without the slowdown.",
+        "price": "$28",
+        "period": "per user / month",
+        "featured": false,
+        "badge": "",
+        "buttonText": "Talk to sales",
+        "buttonLink": "#",
+        "features": [
+            "Everything in Pro",
+            "SAML SSO and SCIM provisioning",
+            "Audit log and data residency",
+            "Guest roles and private teams",
+            "99.99% uptime SLA",
+            "Dedicated success engineer"
+        ]
+    }
+]

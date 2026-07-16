@@ -1,0 +1,77 @@
+@props([
+    'tagline' => 'The system of record for teams that ship.',
+    'copyright' => '© 2026 Draft Systems, Inc.',
+])
+<!--
+    The site-wide footer. The tagline and copyright line are editable from the
+    Layout tab (footer.yml); the link columns are plain markup — edit them here
+    once and they update on every page.
+-->
+<footer class="relative border-t border-line">
+    <div class="dot-grid pointer-events-none absolute inset-0 rotate-180"></div>
+
+    <div class="relative mx-auto w-full max-w-6xl px-6 py-16 sm:py-20">
+        <div class="grid gap-12 lg:grid-cols-[1.4fr_1fr_1fr_1fr]">
+
+            <div>
+                <a href="/" aria-label="Homepage" class="inline-flex items-center gap-2.5">
+                    <svg viewBox="0 0 64 64" class="size-6 shrink-0" aria-hidden="true">
+                        <rect width="64" height="64" rx="16" class="fill-raised"/>
+                        <rect x="1" y="1" width="62" height="62" rx="15" class="fill-none stroke-accent/40" stroke-width="2"/>
+                        <path d="M22 18h12c8.284 0 15 6.268 15 14s-6.716 14-15 14H22V18Zm7 6.5v15h5c4.694 0 8.5-3.358 8.5-7.5s-3.806-7.5-8.5-7.5h-5Z" class="fill-accent"/>
+                    </svg>
+                    <span class="text-[15px] font-semibold tracking-tight">Draft</span>
+                </a>
+                <p class="mt-4 max-w-[26ch] text-sm/6 text-muted">{{ $tagline }}</p>
+
+                <p class="mt-8 inline-flex items-center gap-2 rounded-full border border-line bg-panel px-3 py-1.5 font-mono text-xs text-muted">
+                    <span class="relative flex size-1.5">
+                        <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-60"></span>
+                        <span class="relative inline-flex size-1.5 rounded-full bg-emerald-400"></span>
+                    </span>
+                    All systems operational
+                </p>
+            </div>
+
+            <nav aria-label="Product">
+                <p class="font-mono text-[11px] font-medium tracking-widest text-faint uppercase">Product</p>
+                <ul role="list" class="mt-4 flex flex-col gap-3 text-sm">
+                    <li><a href="/features" class="text-muted transition-colors duration-200 hover:text-ink">Features</a></li>
+                    <li><a href="/pricing" class="text-muted transition-colors duration-200 hover:text-ink">Pricing</a></li>
+                    <li><a href="/changelog" class="text-muted transition-colors duration-200 hover:text-ink">Changelog</a></li>
+                    <li><a href="/docs" class="text-muted transition-colors duration-200 hover:text-ink">Docs</a></li>
+                </ul>
+            </nav>
+
+            <nav aria-label="Company">
+                <p class="font-mono text-[11px] font-medium tracking-widest text-faint uppercase">Company</p>
+                <ul role="list" class="mt-4 flex flex-col gap-3 text-sm">
+                    <li><a href="/updates" class="text-muted transition-colors duration-200 hover:text-ink">Updates</a></li>
+                    <li><a href="/updates/how-northwind-ships-with-draft" class="text-muted transition-colors duration-200 hover:text-ink">Customers</a></li>
+                    <li><a href="#" class="text-muted transition-colors duration-200 hover:text-ink">Careers</a></li>
+                    <li><a href="#" class="text-muted transition-colors duration-200 hover:text-ink">Contact</a></li>
+                </ul>
+            </nav>
+
+            <nav aria-label="Connect">
+                <p class="font-mono text-[11px] font-medium tracking-widest text-faint uppercase">Connect</p>
+                <ul role="list" class="mt-4 flex flex-col gap-3 text-sm">
+                    <li><a href="#" class="text-muted transition-colors duration-200 hover:text-ink">X / Twitter</a></li>
+                    <li><a href="#" class="text-muted transition-colors duration-200 hover:text-ink">GitHub</a></li>
+                    <li><a href="#" class="text-muted transition-colors duration-200 hover:text-ink">YouTube</a></li>
+                    <li><a href="#" class="text-muted transition-colors duration-200 hover:text-ink">RSS</a></li>
+                </ul>
+            </nav>
+
+        </div>
+
+        <div class="mt-14 flex flex-wrap items-center justify-between gap-4 border-t border-line pt-8">
+            <p class="text-[13px] text-faint">{{ $copyright }}</p>
+            <div class="flex items-center gap-6 text-[13px]">
+                <a href="#" class="text-faint transition-colors duration-200 hover:text-muted">Privacy</a>
+                <a href="#" class="text-faint transition-colors duration-200 hover:text-muted">Terms</a>
+                <a href="#" class="text-faint transition-colors duration-200 hover:text-muted">Security</a>
+            </div>
+        </div>
+    </div>
+</footer>

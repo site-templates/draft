@@ -1,0 +1,19 @@
+# Field labels for the docs layout chrome. Doc pages pass these as attributes
+# on their x-layouts.doc tag; the sidebar comes from the docs collection via
+# the bound nav attribute, so it isn't an editable field here.
+title: Docs layout
+description: The shared chrome around a docs page — section label, title, summary, and the sidebar
+fields:
+    title:
+        type: text
+        label: Title
+        default: ""
+    description:
+        type: textarea
+        label: Summary
+        default: ""
+    section:
+        type: text
+        label: Section label
+        description: The small label above the title, e.g. Guides or Reference.
+        default: "Documentation"

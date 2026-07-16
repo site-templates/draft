@@ -1,0 +1,44 @@
+[
+    {
+        "quote": "We moved eleven years of history out of our old tracker on a Tuesday morning and planned the next cycle that afternoon. Nobody asked for training. That was the whole rollout.",
+        "name": "Ines Kovac",
+        "role": "VP of Engineering",
+        "company": "Align",
+        "avatar": "https://assets.ui.sh/avatars/1.webp?size=160"
+    },
+    {
+        "quote": "Draft is the first tool where the keyboard path is the fast path. I haven't touched my mouse in a planning meeting since March.",
+        "name": "Theo Lindqvist",
+        "role": "Staff Engineer",
+        "company": "Orbital",
+        "avatar": "https://assets.ui.sh/avatars/7.webp?size=160"
+    },
+    {
+        "quote": "The changelog used to be a quarterly guilt trip. Now it writes itself from the release, and our customers reply to it. Actual replies, to a changelog.",
+        "name": "Amara Osei",
+        "role": "Head of Product",
+        "company": "Looply",
+        "avatar": "https://assets.ui.sh/avatars/9.webp?size=160"
+    },
+    {
+        "quote": "Agents that propose instead of act was the unlock for us. Triage takes twenty minutes, and a human still owns every call.",
+        "name": "Dana Whitfield",
+        "role": "Engineering Manager",
+        "company": "Axiom",
+        "avatar": "https://assets.ui.sh/avatars/10.webp?size=160"
+    },
+    {
+        "quote": "It's fast in the way that changes behavior. People file the small papercuts now because filing costs nothing — and the papercuts finally get fixed.",
+        "name": "Rafael Duarte",
+        "role": "CTO",
+        "company": "Artifact",
+        "avatar": "https://assets.ui.sh/avatars/13.webp?size=160"
+    },
+    {
+        "quote": "We ran Draft next to our old stack for one cycle. The team held a small ceremony to close the last tab. There was cake.",
+        "name": "Mei Nakamura",
+        "role": "Director of Platform",
+        "company": "Relay",
+        "avatar": "https://assets.ui.sh/avatars/16.webp?size=160"
+    }
+]

@@ -1,0 +1,40 @@
+@props([
+    'heading' => 'Ship your next release with Draft',
+    'body' => 'Set up a workspace in under two minutes. Import from your current tracker with one command.',
+    'buttonText' => 'Start building',
+    'buttonLink' => '/pricing',
+    'secondaryText' => 'Read the docs',
+    'secondaryLink' => '/docs',
+])
+<!--
+    The closing move: a glowing panel on the dot grid with two actions.
+-->
+<section id="cta" class="py-20 sm:py-28">
+    <div class="mx-auto w-full max-w-6xl px-6">
+        <div class="relative overflow-hidden rounded-3xl border border-line bg-panel px-8 py-16 text-center sm:px-16 sm:py-24" data-reveal>
+            <div class="glow pointer-events-none absolute inset-x-0 -top-24 h-72"></div>
+            <div class="dot-grid pointer-events-none absolute inset-0"></div>
+
+            <div class="relative">
+                <svg viewBox="0 0 64 64" class="mx-auto size-12" aria-hidden="true">
+                    <rect width="64" height="64" rx="16" class="fill-raised"/>
+                    <rect x="1" y="1" width="62" height="62" rx="15" class="fill-none stroke-accent/40" stroke-width="2"/>
+                    <path d="M22 18h12c8.284 0 15 6.268 15 14s-6.716 14-15 14H22V18Zm7 6.5v15h5c4.694 0 8.5-3.358 8.5-7.5s-3.806-7.5-8.5-7.5h-5Z" class="fill-accent"/>
+                </svg>
+
+                <h2 class="mx-auto mt-8 max-w-[24ch] text-3xl font-semibold tracking-tight text-balance sm:text-[2.5rem] sm:leading-[1.15]">{{ $heading }}</h2>
+                <p class="mx-auto mt-4 max-w-[46ch] text-lg/8 text-pretty text-muted">{{ $body }}</p>
+
+                <div class="mt-10 flex flex-wrap items-center justify-center gap-3">
+                    <a href="{{ $buttonLink }}" class="rounded-lg bg-ink px-5 py-2.5 text-sm font-medium text-canvas shadow-[0_0_0_1px_rgba(255,255,255,0.06),0_8px_24px_-12px_rgba(123,140,255,0.5)] transition-all duration-200 hover:bg-white">{{ $buttonText }}</a>
+                    <a href="{{ $secondaryLink }}" class="group inline-flex items-center gap-1.5 rounded-lg border border-line bg-panel/60 px-5 py-2.5 text-sm font-medium text-ink backdrop-blur transition-colors duration-200 hover:border-faint">
+                        {{ $secondaryText }}
+                        <svg viewBox="0 0 16 16" class="size-3.5 fill-current opacity-50 transition-transform duration-200 group-hover:translate-x-0.5" aria-hidden="true">
+                            <path fill-rule="evenodd" d="M2 8a.75.75 0 0 1 .75-.75h8.69L8.22 4.03a.75.75 0 0 1 1.06-1.06l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 0 1-1.06-1.06l3.22-3.22H2.75A.75.75 0 0 1 2 8Z" clip-rule="evenodd"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

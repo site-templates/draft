@@ -1,0 +1,15 @@
+title: Pricing
+description: Three plan cards from the plans collection — heading and copy editable here
+fields:
+    eyebrow:
+        type: text
+        label: Eyebrow
+        default: "Pricing"
+    heading:
+        type: text
+        label: Heading
+        default: "Start free. Scale when it sticks."
+    body:
+        type: textarea
+        label: Supporting copy
+        default: "Every plan includes unlimited issues, the public changelog, and the fastest sync engine in the category."

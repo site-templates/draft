@@ -1,0 +1,58 @@
+@props(['items'])
+<!--
+    The Updates index: the newest post runs wide as the feature card, the rest
+    flow in a three-across grid. Items come from
+    resources/data/collections/updates.json; each links to a real page under
+    pages/updates/{slug}.blade.html — add the page, then add its card here.
+-->
+<section id="updates" class="py-14 sm:py-16">
+    <div class="mx-auto w-full max-w-6xl px-6">
+
+        {{-- The featured (newest) post --}}
+        @foreach ($items as $item)
+            @continue(!$loop->first)
+            <a href="{{ $item->link }}" class="group grid overflow-hidden rounded-2xl border border-line bg-panel transition-colors duration-300 hover:border-[#33363e] lg:grid-cols-[1.5fr_1fr]" data-reveal>
+                <div class="overflow-hidden max-lg:order-first lg:order-last">
+                    <img src="{{ $item->image }}" alt="{{ $item->imageAlt }}" class="aspect-video size-full object-cover transition-transform duration-700 group-hover:scale-[1.03] lg:aspect-auto" loading="lazy">
+                </div>
+                <div class="flex flex-col p-8 sm:p-10">
+                    <div class="flex items-center gap-3 text-[13px]">
+                        <span class="rounded-full border border-accent/30 bg-accent-soft/40 px-2.5 py-0.5 font-medium text-accent">{{ $item->category }}</span>
+                        <span class="text-faint">{{ $item->date }}</span>
+                    </div>
+                    <h2 class="mt-5 text-2xl font-semibold tracking-tight text-pretty transition-colors duration-200 group-hover:text-accent sm:text-3xl">{{ $item->title }}</h2>
+                    <p class="mt-4 text-base/7 text-pretty text-muted">{{ $item->description }}</p>
+                    <div class="mt-auto flex items-center gap-3 pt-8">
+                        <img src="{{ $item->authorImage }}" alt="" class="size-7 rounded-full object-cover outline-1 -outline-offset-1 outline-white/10" loading="lazy">
+                        <p class="text-sm text-muted">{{ $item->author }} <span class="text-faint">· {{ $item->readTime }}</span></p>
+                    </div>
+                </div>
+            </a>
+        @endforeach
+
+        {{-- The rest of the grid --}}
+        <div class="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            @foreach ($items as $item)
+                @continue($loop->first)
+                <a href="{{ $item->link }}" class="group flex flex-col overflow-hidden rounded-2xl border border-line bg-panel transition-colors duration-300 hover:border-[#33363e]" data-reveal>
+                    <div class="overflow-hidden">
+                        <img src="{{ $item->image }}" alt="{{ $item->imageAlt }}" class="aspect-[16/9] w-full object-cover transition-transform duration-700 group-hover:scale-[1.04]" loading="lazy">
+                    </div>
+                    <div class="flex flex-1 flex-col p-6">
+                        <div class="flex items-center gap-3 text-[13px]">
+                            <span class="rounded-full border border-line px-2.5 py-0.5 font-medium text-muted">{{ $item->category }}</span>
+                            <span class="text-faint">{{ $item->date }}</span>
+                        </div>
+                        <h2 class="mt-4 text-lg font-semibold tracking-tight text-pretty transition-colors duration-200 group-hover:text-accent">{{ $item->title }}</h2>
+                        <p class="mt-2.5 text-sm/6 text-pretty text-muted">{{ $item->description }}</p>
+                        <div class="mt-auto flex items-center gap-2.5 pt-6">
+                            <img src="{{ $item->authorImage }}" alt="" class="size-6 rounded-full object-cover outline-1 -outline-offset-1 outline-white/10" loading="lazy">
+                            <p class="text-[13px] text-muted">{{ $item->author }} <span class="text-faint">· {{ $item->readTime }}</span></p>
+                        </div>
+                    </div>
+                </a>
+            @endforeach
+        </div>
+
+    </div>
+</section>

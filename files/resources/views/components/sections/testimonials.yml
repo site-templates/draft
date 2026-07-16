@@ -1,0 +1,11 @@
+title: Testimonials
+description: Masonry quote cards — the quotes come from the testimonials collection
+fields:
+    eyebrow:
+        type: text
+        label: Eyebrow
+        default: "Customers"
+    heading:
+        type: text
+        label: Heading
+        default: "Loved by teams that hate slow tools"

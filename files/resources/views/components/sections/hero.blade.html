@@ -1,0 +1,210 @@
+@props([
+    'badge' => 'Draft 2.0 is here — read the announcement',
+    'badgeLink' => '/updates/draft-2-a-new-foundation',
+    'heading' => 'Plan. Ship. Announce.',
+    'headingLine2' => 'One connected workspace.',
+    'body' => 'Draft is the system of record for product work — issues, cycles, releases, and the changelog your customers actually read. Built for keyboards, tuned for speed.',
+    'placeholder' => 'Enter your work email',
+    'buttonText' => 'Get started',
+    'buttonLink' => '/pricing',
+    'caption' => 'Free for 14 days · No credit card required',
+])
+<!--
+    The opening statement: badge, two-line headline, supporting copy, and the
+    email capture. The product window below it is drawn entirely in HTML and
+    Tailwind — no screenshot to keep in sync, always razor sharp.
+-->
+<section id="hero" class="relative overflow-hidden pt-36 pb-8 sm:pt-44">
+    <div class="glow pointer-events-none absolute inset-x-0 top-0 h-[36rem]"></div>
+    <div class="dot-grid pointer-events-none absolute inset-x-0 top-0 h-[30rem]"></div>
+
+    <div class="relative mx-auto w-full max-w-6xl px-6">
+        <div class="mx-auto max-w-3xl text-center">
+
+            <a href="{{ $badgeLink }}" class="group inline-flex items-center gap-2 rounded-full border border-line bg-panel/80 py-1 pr-3 pl-1 text-[13px] text-muted backdrop-blur transition-colors duration-200 hover:border-accent/40 hover:text-ink" data-reveal>
+                <span class="rounded-full bg-accent-soft px-2 py-0.5 text-xs font-medium text-accent">New</span>
+                {{ $badge }}
+                <svg viewBox="0 0 16 16" class="size-3.5 fill-current opacity-50 transition-transform duration-200 group-hover:translate-x-0.5" aria-hidden="true">
+                    <path fill-rule="evenodd" d="M2 8a.75.75 0 0 1 .75-.75h8.69L8.22 4.03a.75.75 0 0 1 1.06-1.06l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 0 1-1.06-1.06l3.22-3.22H2.75A.75.75 0 0 1 2 8Z" clip-rule="evenodd"/>
+                </svg>
+            </a>
+
+            <h1 class="reveal-1 mt-8 text-[2.75rem] leading-[1.1] font-semibold tracking-tight text-balance sm:text-[4.25rem] sm:leading-[1.05]" data-reveal>
+                {{ $heading }}<br class="max-sm:hidden">
+                <span class="text-gradient">{{ $headingLine2 }}</span>
+            </h1>
+
+            <p class="reveal-2 mx-auto mt-6 max-w-[52ch] text-lg/8 text-pretty text-muted" data-reveal>
+                {{ $body }}
+            </p>
+
+            <form action="#" class="reveal-3 mx-auto mt-10 flex max-w-md items-center gap-2 rounded-xl border border-line bg-panel/80 p-1.5 backdrop-blur transition-colors duration-200 focus-within:border-accent/50 max-sm:flex-col max-sm:items-stretch max-sm:border-0 max-sm:bg-transparent max-sm:p-0 max-sm:backdrop-blur-none" data-reveal>
+                <input
+                    type="email"
+                    name="email"
+                    placeholder="{{ $placeholder }}"
+                    class="min-w-0 flex-1 bg-transparent px-3 py-2 text-sm text-ink placeholder:text-faint focus:outline-none max-sm:rounded-xl max-sm:border max-sm:border-line max-sm:bg-panel max-sm:py-3">
+                <a href="{{ $buttonLink }}" class="shrink-0 rounded-lg bg-ink px-4 py-2 text-center text-sm font-medium text-canvas transition-all duration-200 hover:bg-white max-sm:py-3">
+                    {{ $buttonText }}
+                </a>
+            </form>
+
+            <p class="reveal-4 mt-4 font-mono text-xs text-faint" data-reveal>{{ $caption }}</p>
+        </div>
+
+        <!--
+            The product window — pure HTML and Tailwind, aria-hidden decoration.
+            A Linear-style triage view: sidebar, toolbar, and an issue list.
+        -->
+        <div class="reveal-4 relative mt-16 sm:mt-20" data-reveal aria-hidden="true">
+            <div class="pointer-events-none absolute -inset-x-8 -top-12 bottom-0 rounded-[2.5rem] bg-accent/10 blur-3xl"></div>
+
+            <div class="pointer-events-none relative select-none overflow-hidden rounded-2xl border border-line bg-panel shadow-2xl shadow-black/60">
+                <!-- Window chrome -->
+                <div class="flex items-center gap-2 border-b border-line px-4 py-3">
+                    <span class="size-2.5 rounded-full bg-raised"></span>
+                    <span class="size-2.5 rounded-full bg-raised"></span>
+                    <span class="size-2.5 rounded-full bg-raised"></span>
+                    <span class="mx-auto flex items-center gap-2 rounded-md border border-line bg-canvas/60 px-8 py-1 font-mono text-[11px] text-faint">
+                        <svg viewBox="0 0 20 20" class="size-3 fill-current" aria-hidden="true"><path fill-rule="evenodd" d="M10 1a4.5 4.5 0 0 0-4.5 4.5V9H5a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-6a2 2 0 0 0-2-2h-.5V5.5A4.5 4.5 0 0 0 10 1Zm3 8V5.5a3 3 0 1 0-6 0V9h6Z" clip-rule="evenodd"/></svg>
+                        app.draft.dev
+                    </span>
+                </div>
+
+                <div class="grid sm:grid-cols-[13rem_1fr]">
+                    <!-- Sidebar -->
+                    <div class="border-r border-line bg-canvas/40 p-3 max-sm:hidden">
+                        <div class="flex items-center gap-2 px-2 py-1.5">
+                            <span class="flex size-5 items-center justify-center rounded-md bg-accent text-[10px] font-bold text-[#0b0c22]">A</span>
+                            <span class="text-[13px] font-medium text-ink">Acme Inc</span>
+                            <svg viewBox="0 0 16 16" class="size-3 fill-faint" aria-hidden="true"><path fill-rule="evenodd" d="M4.22 6.22a.75.75 0 0 1 1.06 0L8 8.94l2.72-2.72a.75.75 0 1 1 1.06 1.06l-3.25 3.25a.75.75 0 0 1-1.06 0L4.22 7.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd"/></svg>
+                        </div>
+
+                        <div class="mt-3 flex flex-col gap-0.5 text-[13px] text-muted">
+                            <span class="flex items-center gap-2.5 rounded-md bg-raised px-2 py-1.5 font-medium text-ink">
+                                <svg viewBox="0 0 20 20" class="size-3.5 fill-accent" aria-hidden="true"><path d="M3 4.25A2.25 2.25 0 0 1 5.25 2h9.5A2.25 2.25 0 0 1 17 4.25v11.5A2.25 2.25 0 0 1 14.75 18h-9.5A2.25 2.25 0 0 1 3 15.75V4.25ZM5.5 6a.75.75 0 0 0 0 1.5h9a.75.75 0 0 0 0-1.5h-9ZM5.5 9.25a.75.75 0 0 0 0 1.5h9a.75.75 0 0 0 0-1.5h-9Z"/></svg>
+                                Inbox
+                                <span class="ml-auto rounded bg-accent-soft px-1.5 text-[11px] font-medium text-accent">12</span>
+                            </span>
+                            <span class="flex items-center gap-2.5 px-2 py-1.5">
+                                <svg viewBox="0 0 20 20" class="size-3.5 fill-current" aria-hidden="true"><path fill-rule="evenodd" d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm.75-13a.75.75 0 0 0-1.5 0v5c0 .414.336.75.75.75h4a.75.75 0 0 0 0-1.5h-3.25V5Z" clip-rule="evenodd"/></svg>
+                                My issues
+                            </span>
+                            <span class="flex items-center gap-2.5 px-2 py-1.5">
+                                <svg viewBox="0 0 20 20" class="size-3.5 fill-current" aria-hidden="true"><path d="M15.98 1.804a1 1 0 0 0-1.96 0l-.24 1.192a1 1 0 0 1-.784.785l-1.192.238a1 1 0 0 0 0 1.962l1.192.238a1 1 0 0 1 .785.785l.238 1.192a1 1 0 0 0 1.962 0l.238-1.192a1 1 0 0 1 .785-.785l1.192-.238a1 1 0 0 0 0-1.962l-1.192-.238a1 1 0 0 1-.785-.785l-.238-1.192ZM6.949 5.684a1 1 0 0 0-1.898 0l-.683 2.051a1 1 0 0 1-.633.633l-2.051.683a1 1 0 0 0 0 1.898l2.051.684a1 1 0 0 1 .633.632l.683 2.051a1 1 0 0 0 1.898 0l.683-2.051a1 1 0 0 1 .633-.633l2.051-.683a1 1 0 0 0 0-1.898l-2.051-.683a1 1 0 0 1-.633-.633l-.683-2.051Z"/></svg>
+                                Cycles
+                            </span>
+                            <span class="flex items-center gap-2.5 px-2 py-1.5">
+                                <svg viewBox="0 0 20 20" class="size-3.5 fill-current" aria-hidden="true"><path fill-rule="evenodd" d="M2 4.25A2.25 2.25 0 0 1 4.25 2h11.5A2.25 2.25 0 0 1 18 4.25v8.5A2.25 2.25 0 0 1 15.75 15h-3.105a3.501 3.501 0 0 0 1.1 1.677A.75.75 0 0 1 13.26 18H6.74a.75.75 0 0 1-.484-1.323A3.501 3.501 0 0 0 7.355 15H4.25A2.25 2.25 0 0 1 2 12.75v-8.5Zm1.5 0a.75.75 0 0 1 .75-.75h11.5a.75.75 0 0 1 .75.75v7.5a.75.75 0 0 1-.75.75H4.25a.75.75 0 0 1-.75-.75v-7.5Z" clip-rule="evenodd"/></svg>
+                                Projects
+                            </span>
+                            <span class="flex items-center gap-2.5 px-2 py-1.5">
+                                <svg viewBox="0 0 20 20" class="size-3.5 fill-current" aria-hidden="true"><path d="M4.25 2A2.25 2.25 0 0 0 2 4.25v2.5A2.25 2.25 0 0 0 4.25 9h2.5A2.25 2.25 0 0 0 9 6.75v-2.5A2.25 2.25 0 0 0 6.75 2h-2.5Zm0 9A2.25 2.25 0 0 0 2 13.25v2.5A2.25 2.25 0 0 0 4.25 18h2.5A2.25 2.25 0 0 0 9 15.75v-2.5A2.25 2.25 0 0 0 6.75 11h-2.5Zm9-9A2.25 2.25 0 0 0 11 4.25v2.5A2.25 2.25 0 0 0 13.25 9h2.5A2.25 2.25 0 0 0 18 6.75v-2.5A2.25 2.25 0 0 0 15.75 2h-2.5Zm0 9A2.25 2.25 0 0 0 11 13.25v2.5A2.25 2.25 0 0 0 13.25 18h2.5A2.25 2.25 0 0 0 18 15.75v-2.5A2.25 2.25 0 0 0 15.75 11h-2.5Z"/></svg>
+                                Views
+                            </span>
+                            <span class="flex items-center gap-2.5 px-2 py-1.5">
+                                <svg viewBox="0 0 20 20" class="size-3.5 fill-current" aria-hidden="true"><path fill-rule="evenodd" d="M3.5 3A1.5 1.5 0 0 0 2 4.5v11A1.5 1.5 0 0 0 3.5 17h13a1.5 1.5 0 0 0 1.5-1.5v-11A1.5 1.5 0 0 0 16.5 3h-13ZM5 6.75A.75.75 0 0 1 5.75 6h8.5a.75.75 0 0 1 0 1.5h-8.5A.75.75 0 0 1 5 6.75ZM5.75 9.5a.75.75 0 0 0 0 1.5h8.5a.75.75 0 0 0 0-1.5h-8.5Z" clip-rule="evenodd"/></svg>
+                                Releases
+                            </span>
+                        </div>
+
+                        <p class="mt-5 px-2 font-mono text-[10px] tracking-widest text-faint uppercase">Teams</p>
+                        <div class="mt-1.5 flex flex-col gap-0.5 text-[13px] text-muted">
+                            <span class="flex items-center gap-2.5 px-2 py-1.5"><span class="size-2 rounded-sm bg-accent"></span>Core</span>
+                            <span class="flex items-center gap-2.5 px-2 py-1.5"><span class="size-2 rounded-sm bg-emerald-400"></span>Mobile</span>
+                            <span class="flex items-center gap-2.5 px-2 py-1.5"><span class="size-2 rounded-sm bg-amber-400"></span>Infrastructure</span>
+                        </div>
+                    </div>
+
+                    <!-- Main pane -->
+                    <div class="min-w-0 bg-panel">
+                        <!-- Toolbar -->
+                        <div class="flex items-center gap-3 border-b border-line px-4 py-2.5 text-[13px]">
+                            <span class="font-medium text-ink">Cycle 24</span>
+                            <span class="rounded-full border border-line px-2 py-0.5 text-[11px] text-muted">6 days left</span>
+                            <span class="ml-auto flex items-center gap-1 rounded-md border border-line px-2 py-1 text-[11px] text-muted">
+                                <svg viewBox="0 0 20 20" class="size-3 fill-current" aria-hidden="true"><path fill-rule="evenodd" d="M2.628 1.601C5.028 1.206 7.49 1 10 1s4.973.206 7.372.601a.75.75 0 0 1 .628.74v2.288a2.25 2.25 0 0 1-.659 1.59l-4.682 4.683a2.25 2.25 0 0 0-.659 1.59v3.037c0 .684-.31 1.33-.844 1.757l-1.937 1.55A.75.75 0 0 1 8 18.25v-5.757a2.25 2.25 0 0 0-.659-1.591L2.659 6.22A2.25 2.25 0 0 1 2 4.629V2.34a.75.75 0 0 1 .628-.74Z" clip-rule="evenodd"/></svg>
+                                Filter
+                            </span>
+                        </div>
+
+                        <!-- Group: In Progress -->
+                        <div class="flex items-center gap-2 bg-canvas/50 px-4 py-1.5 text-xs text-muted">
+                            <span class="relative flex size-3 items-center justify-center rounded-full border-[1.5px] border-amber-400"><span class="size-1 rounded-full bg-amber-400"></span></span>
+                            In Progress <span class="text-faint">4</span>
+                        </div>
+
+                        <div class="flex items-center gap-3 border-t border-line px-4 py-2.5 text-[13px]">
+                            <svg viewBox="0 0 16 16" class="size-3.5 shrink-0 fill-orange-400" aria-hidden="true"><path d="M2 10.5a1 1 0 0 1 1-1h1a1 1 0 0 1 1 1V13a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1v-2.5ZM6.5 7a1 1 0 0 1 1-1h1a1 1 0 0 1 1 1v6a1 1 0 0 1-1 1h-1a1 1 0 0 1-1-1V7ZM11 3.5a1 1 0 0 1 1-1h1a1 1 0 0 1 1 1V13a1 1 0 0 1-1 1h-1a1 1 0 0 1-1-1V3.5Z"/></svg>
+                            <span class="font-mono text-xs text-faint">COR-128</span>
+                            <span class="truncate text-ink">Command menu: fuzzy matching for issue titles</span>
+                            <span class="ml-auto hidden shrink-0 items-center gap-2 sm:flex">
+                                <span class="rounded-full border border-line px-2 py-0.5 text-[11px] text-accent">Design</span>
+                                <img src="https://assets.ui.sh/avatars/2.webp?size=160" alt="" class="size-5 rounded-full object-cover" loading="lazy">
+                            </span>
+                        </div>
+
+                        <div class="flex items-center gap-3 border-t border-line px-4 py-2.5 text-[13px]">
+                            <svg viewBox="0 0 16 16" class="size-3.5 shrink-0 fill-faint" aria-hidden="true"><path d="M2 10.5a1 1 0 0 1 1-1h1a1 1 0 0 1 1 1V13a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1v-2.5ZM6.5 7a1 1 0 0 1 1-1h1a1 1 0 0 1 1 1v6a1 1 0 0 1-1 1h-1a1 1 0 0 1-1-1V7Z"/></svg>
+                            <span class="font-mono text-xs text-faint">COR-131</span>
+                            <span class="truncate text-ink">Realtime sync drops offline edits older than 30 days</span>
+                            <span class="ml-auto hidden shrink-0 items-center gap-2 sm:flex">
+                                <span class="rounded-full border border-line px-2 py-0.5 text-[11px] text-emerald-400">Sync</span>
+                                <img src="https://assets.ui.sh/avatars/5.webp?size=160" alt="" class="size-5 rounded-full object-cover" loading="lazy">
+                            </span>
+                        </div>
+
+                        <div class="flex items-center gap-3 border-t border-line px-4 py-2.5 text-[13px]">
+                            <svg viewBox="0 0 16 16" class="size-3.5 shrink-0 fill-orange-400" aria-hidden="true"><path d="M2 10.5a1 1 0 0 1 1-1h1a1 1 0 0 1 1 1V13a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1v-2.5ZM6.5 7a1 1 0 0 1 1-1h1a1 1 0 0 1 1 1v6a1 1 0 0 1-1 1h-1a1 1 0 0 1-1-1V7ZM11 3.5a1 1 0 0 1 1-1h1a1 1 0 0 1 1 1V13a1 1 0 0 1-1 1h-1a1 1 0 0 1-1-1V3.5Z"/></svg>
+                            <span class="font-mono text-xs text-faint">MOB-77</span>
+                            <span class="truncate text-ink">Swipe actions for triage on iOS</span>
+                            <span class="ml-auto hidden shrink-0 items-center gap-2 sm:flex">
+                                <span class="rounded-full border border-line px-2 py-0.5 text-[11px] text-muted">Mobile</span>
+                                <img src="https://assets.ui.sh/avatars/8.webp?size=160" alt="" class="size-5 rounded-full object-cover" loading="lazy">
+                            </span>
+                        </div>
+
+                        <!-- Group: Todo -->
+                        <div class="flex items-center gap-2 border-t border-line bg-canvas/50 px-4 py-1.5 text-xs text-muted">
+                            <span class="size-3 rounded-full border-[1.5px] border-faint"></span>
+                            Todo <span class="text-faint">7</span>
+                        </div>
+
+                        <div class="flex items-center gap-3 border-t border-line px-4 py-2.5 text-[13px]">
+                            <svg viewBox="0 0 16 16" class="size-3.5 shrink-0 fill-faint" aria-hidden="true"><path d="M2 10.5a1 1 0 0 1 1-1h1a1 1 0 0 1 1 1V13a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1v-2.5Z"/></svg>
+                            <span class="font-mono text-xs text-faint">COR-134</span>
+                            <span class="truncate text-ink">Changelog draft generated from merged release notes</span>
+                            <span class="ml-auto hidden shrink-0 items-center gap-2 sm:flex">
+                                <span class="rounded-full border border-line px-2 py-0.5 text-[11px] text-accent">Releases</span>
+                                <img src="https://assets.ui.sh/avatars/11.webp?size=160" alt="" class="size-5 rounded-full object-cover" loading="lazy">
+                            </span>
+                        </div>
+
+                        <div class="flex items-center gap-3 border-t border-line px-4 py-2.5 text-[13px]">
+                            <svg viewBox="0 0 16 16" class="size-3.5 shrink-0 fill-faint" aria-hidden="true"><path d="M2 10.5a1 1 0 0 1 1-1h1a1 1 0 0 1 1 1V13a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1v-2.5ZM6.5 7a1 1 0 0 1 1-1h1a1 1 0 0 1 1 1v6a1 1 0 0 1-1 1h-1a1 1 0 0 1-1-1V7Z"/></svg>
+                            <span class="font-mono text-xs text-faint">INF-45</span>
+                            <span class="truncate text-ink">Zero-downtime migration for the events table</span>
+                            <span class="ml-auto hidden shrink-0 items-center gap-2 sm:flex">
+                                <span class="rounded-full border border-line px-2 py-0.5 text-[11px] text-amber-400">Infra</span>
+                                <img src="https://assets.ui.sh/avatars/14.webp?size=160" alt="" class="size-5 rounded-full object-cover" loading="lazy">
+                            </span>
+                        </div>
+
+                        <div class="flex items-center gap-3 border-t border-line px-4 py-2.5 text-[13px] max-sm:hidden">
+                            <svg viewBox="0 0 16 16" class="size-3.5 shrink-0 fill-faint" aria-hidden="true"><path d="M2 10.5a1 1 0 0 1 1-1h1a1 1 0 0 1 1 1V13a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1v-2.5Z"/></svg>
+                            <span class="font-mono text-xs text-faint">COR-136</span>
+                            <span class="truncate text-ink">Agent-suggested duplicates in triage view</span>
+                            <span class="ml-auto hidden shrink-0 items-center gap-2 sm:flex">
+                                <span class="rounded-full border border-line px-2 py-0.5 text-[11px] text-accent">Agents</span>
+                                <img src="https://assets.ui.sh/avatars/16.webp?size=160" alt="" class="size-5 rounded-full object-cover" loading="lazy">
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Fade the window into the canvas, Asset-style -->
+            <div class="pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-canvas to-transparent"></div>
+        </div>
+    </div>
+</section>

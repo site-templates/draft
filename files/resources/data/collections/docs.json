@@ -1,0 +1,20 @@
+[
+    {
+        "title": "Quickstart",
+        "description": "From zero to a planned cycle in about ten minutes — workspace, first issues, and your import.",
+        "link": "/docs/quickstart",
+        "icon": "<svg viewBox='0 0 20 20' class='size-4 fill-current' aria-hidden='true'><path d='M11.983 1.907a.75.75 0 0 0-1.292-.657l-8.5 9.5A.75.75 0 0 0 2.75 12h6.572l-1.305 6.093a.75.75 0 0 0 1.292.657l8.5-9.5A.75.75 0 0 0 17.25 8h-6.572l1.305-6.093Z'/></svg>"
+    },
+    {
+        "title": "Core concepts",
+        "description": "Issues, cycles, projects, and releases — the four nouns of Draft and how they fit together.",
+        "link": "/docs/core-concepts",
+        "icon": "<svg viewBox='0 0 20 20' class='size-4 fill-current' aria-hidden='true'><path d='M4.25 2A2.25 2.25 0 0 0 2 4.25v2.5A2.25 2.25 0 0 0 4.25 9h2.5A2.25 2.25 0 0 0 9 6.75v-2.5A2.25 2.25 0 0 0 6.75 2h-2.5Zm0 9A2.25 2.25 0 0 0 2 13.25v2.5A2.25 2.25 0 0 0 4.25 18h2.5A2.25 2.25 0 0 0 9 15.75v-2.5A2.25 2.25 0 0 0 6.75 11h-2.5Zm9-9A2.25 2.25 0 0 0 11 4.25v2.5A2.25 2.25 0 0 0 13.25 9h2.5A2.25 2.25 0 0 0 18 6.75v-2.5A2.25 2.25 0 0 0 15.75 2h-2.5Zm0 9A2.25 2.25 0 0 0 11 13.25v2.5A2.25 2.25 0 0 0 13.25 18h2.5A2.25 2.25 0 0 0 18 15.75v-2.5A2.25 2.25 0 0 0 15.75 11h-2.5Z'/></svg>"
+    },
+    {
+        "title": "Keyboard shortcuts",
+        "description": "The full map of the keyboard-first interface — navigation, actions, and the command menu.",
+        "link": "/docs/keyboard-shortcuts",
+        "icon": "<svg viewBox='0 0 20 20' class='size-4 fill-current' aria-hidden='true'><path fill-rule='evenodd' d='M2 5.25A2.25 2.25 0 0 1 4.25 3h11.5A2.25 2.25 0 0 1 18 5.25v9.5A2.25 2.25 0 0 1 15.75 17H4.25A2.25 2.25 0 0 1 2 14.75v-9.5ZM4.5 6a.75.75 0 0 0 0 1.5h.5A.75.75 0 0 0 5.75 6h-1.25Zm3.25 0A.75.75 0 0 0 8.5 7.5H9A.75.75 0 0 0 9 6h-1.25Zm3.5 0a.75.75 0 0 0 .75 1.5h.5a.75.75 0 0 0 0-1.5h-1.25Zm3.5 0a.75.75 0 0 0 .75 1.5h.25a.75.75 0 0 0 0-1.5h-1Zm-10.25 3.5a.75.75 0 0 0 0 1.5h.5a.75.75 0 0 0 0-1.5h-.5Zm3.25 0a.75.75 0 0 0 0 1.5h.5a.75.75 0 0 0 0-1.5H8Zm3.5 0a.75.75 0 0 0 0 1.5h.5a.75.75 0 0 0 0-1.5h-.5Zm3.5 0a.75.75 0 0 0 0 1.5h.5a.75.75 0 0 0 0-1.5h-.5ZM6 13.25a.75.75 0 0 1 .75-.75h6.5a.75.75 0 0 1 0 1.5h-6.5a.75.75 0 0 1-.75-.75Z' clip-rule='evenodd'/></svg>"
+    }
+]
