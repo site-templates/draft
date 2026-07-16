@@ -11,7 +11,7 @@
         {{-- The featured (newest) post --}}
         @foreach ($items as $item)
             @continue(!$loop->first)
-            <a href="{{ $item->link }}" class="group grid overflow-hidden rounded-2xl border border-line bg-panel transition-colors duration-300 hover:border-[#33363e] lg:grid-cols-[1.5fr_1fr]" data-reveal>
+            <a href="{{ $item->link }}" class="group grid overflow-hidden rounded-2xl border border-line bg-panel transition-colors duration-300 hover:border-white/15 lg:grid-cols-[1.5fr_1fr]" data-reveal>
                 <div class="overflow-hidden max-lg:order-first lg:order-last">
                     <img src="{{ $item->image }}" alt="{{ $item->imageAlt }}" class="aspect-video size-full object-cover grayscale transition-transform duration-700 group-hover:scale-[1.03] lg:aspect-auto" loading="lazy">
                 </div>
@@ -34,7 +34,7 @@
         <div class="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             @foreach ($items as $item)
                 @continue($loop->first)
-                <a href="{{ $item->link }}" class="group flex flex-col overflow-hidden rounded-2xl border border-line bg-panel transition-colors duration-300 hover:border-[#33363e]" data-reveal>
+                <a href="{{ $item->link }}" class="group flex flex-col overflow-hidden rounded-2xl border border-line bg-panel transition-colors duration-300 hover:border-white/15" data-reveal>
                     <div class="overflow-hidden">
                         <img src="{{ $item->image }}" alt="{{ $item->imageAlt }}" class="aspect-[16/9] w-full object-cover grayscale transition-transform duration-700 group-hover:scale-[1.04]" loading="lazy">
                     </div>
