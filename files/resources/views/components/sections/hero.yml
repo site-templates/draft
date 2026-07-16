@@ -2,44 +2,26 @@
 # to a prop in the component's props. Defaults fill any attribute the page
 # doesn't pass. Field names are camelCase, matching the props they fill.
 title: Hero
-description: The opening statement — badge, two-line headline, supporting copy, and email capture
+description: The opening statement — a left-aligned monochrome headline, subcopy with an announcement link, and the product window
 fields:
-    badge:
-        type: text
-        label: Badge
-        description: The announcement pill above the headline.
-        default: "Draft 2.0 is here — read the announcement"
-    badgeLink:
-        type: url
-        label: Badge link
-        default: "/updates/draft-2-a-new-foundation"
     heading:
         type: text
         label: Heading
-        default: "Plan. Ship. Announce."
-    headingLine2:
-        type: text
-        label: Heading, second line
-        description: Rendered below the heading in a fading gradient.
-        default: "One connected workspace."
+        default: "The workspace where software ships"
     body:
         type: textarea
         label: Supporting copy
-        default: "Draft is the system of record for product work — issues, cycles, releases, and the changelog your customers actually read. Built for keyboards, tuned for speed."
-    placeholder:
+        default: "Purpose-built for the whole delivery loop — issues, cycles, releases, and the changelog your customers actually read."
+    newLabel:
         type: text
-        label: Email placeholder
-        default: "Enter your work email"
-    buttonText:
+        label: Announcement label
+        description: The bold word before the announcement link.
+        default: "New"
+    newText:
         type: text
-        label: Button text
-        default: "Get started"
-    buttonLink:
+        label: Announcement text
+        default: "Draft Agents"
+    newLink:
         type: url
-        label: Button link
-        default: "/pricing"
-    caption:
-        type: text
-        label: Caption
-        description: The small line under the email capture.
-        default: "Free for 14 days · No credit card required"
+        label: Announcement link
+        default: "/updates/introducing-draft-agents"
