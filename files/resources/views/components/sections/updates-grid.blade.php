@@ -3,7 +3,7 @@
     The Updates index: the newest post runs wide as the feature card, the rest
     flow in a three-across grid. Items come from
     resources/data/collections/updates.json; each links to a real page under
-    pages/updates/{slug}.blade.html — add the page, then add its card here.
+    pages/updates/{slug}.blade.php — add the page, then add its card here.
 -->
 <section id="updates" class="py-14 sm:py-16">
     <div class="mx-auto w-full max-w-6xl px-6">

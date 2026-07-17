@@ -1,5 +1,5 @@
 <!--
-    The homepage. It lives at pages/index.blade.html, so it's served at "/".
+    The homepage. It lives at pages/index.blade.php, so it's served at "/".
     The page is a list of sections: each tag pulls a component from
     resources/views/components/sections/ and fills its props with these
     attributes. In Visual mode you can select, reorder, and edit them

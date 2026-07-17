@@ -24,7 +24,7 @@
 </head>
 <body class="min-h-dvh bg-canvas font-sans text-ink antialiased">
 
-    <!-- The site-wide nav. Edit it once in components/nav.blade.html, it updates everywhere. -->
+    <!-- The site-wide nav. Edit it once in components/nav.blade.php, it updates everywhere. -->
     <x-nav/>
 
     <!-- The fixed header floats over this; each page's opening section carries its own top padding. -->

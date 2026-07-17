@@ -1,7 +1,7 @@
 <!--
     Docs hub — served at "/docs". The guide cards come from
     resources/data/collections/docs.json; each links to a real page under
-    pages/docs/{slug}.blade.html.
+    pages/docs/{slug}.blade.php.
 -->
 <x-layouts.main title="Docs" description="Guides and reference for getting set up with Draft — the quickstart, core concepts, and the keyboard map.">
 

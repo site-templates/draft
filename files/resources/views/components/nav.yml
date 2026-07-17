@@ -1,4 +1,4 @@
-# The visual editor's contract for components/nav.blade.html — these fields
+# The visual editor's contract for components/nav.blade.php — these fields
 # surface under the Layout tab. Field names are camelCase, matching the props
 # they fill.
 title: Navigation

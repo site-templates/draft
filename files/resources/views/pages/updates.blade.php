@@ -1,7 +1,7 @@
 <!--
     Updates index — served at "/updates". The cards come from
     resources/data/collections/updates.json; each post is a real page under
-    pages/updates/{slug}.blade.html — add the page, then add its card there.
+    pages/updates/{slug}.blade.php — add the page, then add its card there.
 -->
 <x-layouts.main title="Updates" description="Stories, releases, and ideas from the Draft team — what we shipped, what we learned, and where the product is headed.">
 

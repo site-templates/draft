@@ -1,4 +1,4 @@
-# The visual editor's contract for sections/hero.blade.html: each field maps
+# The visual editor's contract for sections/hero.blade.php: each field maps
 # to a prop in the component's props. Defaults fill any attribute the page
 # doesn't pass. Field names are camelCase, matching the props they fill.
 title: Hero

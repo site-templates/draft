@@ -1,7 +1,7 @@
 @props(['items'])
 <!--
     The docs hub: one card per guide, from resources/data/collections/docs.json.
-    Each card links to a real page under pages/docs/{slug}.blade.html.
+    Each card links to a real page under pages/docs/{slug}.blade.php.
 -->
 <section id="docs-index" class="py-14 sm:py-16">
     <div class="mx-auto w-full max-w-6xl px-6">
