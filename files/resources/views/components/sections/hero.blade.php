@@ -1,6 +1,7 @@
 @props([
     'heading' => 'The workspace where software ships',
     'body' => 'Purpose-built for the whole delivery loop — issues, cycles, releases, and the changelog your customers actually read.',
+    'showNew' => '1',
     'newLabel' => 'New',
     'newText' => 'Draft Agents',
     'newLink' => '/updates/introducing-draft-agents',
@@ -22,6 +23,7 @@
         <div class="reveal-1 mt-10 flex flex-wrap items-end justify-between gap-x-12 gap-y-6 sm:mt-14" data-reveal>
             <p class="max-w-[44ch] text-lg/7 text-pretty text-muted">{{ $body }}</p>
 
+            @if ($showNew)
             <a href="{{ $newLink }}" class="group flex shrink-0 items-center gap-2.5 text-lg/7">
                 <span class="font-medium text-ink">{{ $newLabel }}</span>
                 <span class="text-muted transition-colors duration-200 group-hover:text-ink">{{ $newText }}</span>
@@ -29,6 +31,7 @@
                     <path fill-rule="evenodd" d="M2 8a.75.75 0 0 1 .75-.75h8.69L8.22 4.03a.75.75 0 0 1 1.06-1.06l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 0 1-1.06-1.06l3.22-3.22H2.75A.75.75 0 0 1 2 8Z" clip-rule="evenodd"/>
                 </svg>
             </a>
+            @endif
         </div>
 
         <!--

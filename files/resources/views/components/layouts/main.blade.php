@@ -24,8 +24,8 @@
 </head>
 <body class="min-h-dvh bg-canvas font-sans text-ink antialiased">
 
-    <!-- The site-wide nav. Edit it once in components/nav.blade.php, it updates everywhere. -->
-    <x-nav/>
+    <!-- The site-wide nav. Its links live in resources/data/site.json (nav_links); the markup is components/nav.blade.php. -->
+    <x-nav :links="$site->nav_links"/>
 
     <!-- The fixed header floats over this; each page's opening section carries its own top padding. -->
     <main class="relative">

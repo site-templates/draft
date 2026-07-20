@@ -1,5 +1,6 @@
 @props([
     'brand' => 'Draft',
+    'links' => [],
     'signInText' => 'Sign in',
     'signInLink' => '#',
     'ctaText' => 'Get started',
@@ -10,7 +11,9 @@
     section; once you scroll, main.js sets data-scrolled and site.css fades in
     the glass background and hairline.
 
-    The Resources item is the mega-dropdown: hover opens it with a short intent
+    The primary links come from the nav_links key in resources/data/site.json
+    (the layout passes them in as the bound links attribute). A link with
+    children renders as the mega-dropdown: hover opens it with a short intent
     delay (so diagonal pointer travel never slams it shut), click toggles it on
     touch, Escape dismisses. All of that lives in public/js/main.js.
 -->
@@ -28,21 +31,17 @@
         <!-- Primary links, pushed to the right like the auth actions -->
         <nav class="ml-auto max-lg:hidden" aria-label="Main">
             <ul role="list" class="flex items-center gap-1 text-sm text-muted">
-                <li>
-                    <a href="/features" class="rounded-lg px-3 py-2 transition-colors duration-200 hover:text-ink aria-[current]:text-ink">Features</a>
-                </li>
-                <li>
-                    <a href="/pricing" class="rounded-lg px-3 py-2 transition-colors duration-200 hover:text-ink aria-[current]:text-ink">Pricing</a>
-                </li>
+                @foreach ($links as $link)
+                @if ($link->children ?? false)
 
-                <!-- The Resources mega-dropdown -->
+                <!-- A link with children renders as the mega-dropdown -->
                 <li class="relative" data-dropdown>
                     <button
                         type="button"
                         data-dropdown-trigger
                         aria-expanded="false"
                         class="flex cursor-pointer items-center gap-1 rounded-lg px-3 py-2 transition-colors duration-200 hover:text-ink">
-                        Resources
+                        {{ $link->text }}
                         <svg viewBox="0 0 16 16" class="dropdown-caret size-3.5 fill-current opacity-60" aria-hidden="true">
                             <path fill-rule="evenodd" d="M4.22 6.22a.75.75 0 0 1 1.06 0L8 8.94l2.72-2.72a.75.75 0 1 1 1.06 1.06l-3.25 3.25a.75.75 0 0 1-1.06 0L4.22 7.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd"/>
                         </svg>
@@ -57,43 +56,20 @@
                     <div data-dropdown-panel class="absolute left-1/2 top-full -ml-[18rem] w-[36rem] pt-3">
                         <div class="grid grid-cols-[1.15fr_1fr] gap-1 rounded-2xl border border-line bg-panel/95 p-1.5 shadow-2xl shadow-black/50 backdrop-blur-xl">
 
-                            <!-- Left: the resource destinations -->
+                            <!-- Left: the child links -->
                             <div class="flex flex-col gap-0.5 p-1">
-                                <a href="/updates" class="group flex items-start gap-3.5 rounded-xl p-3 transition-colors duration-200 hover:bg-raised">
+                                @foreach ($link->children as $child)
+                                <a href="{{ $child->url }}" class="group flex items-start gap-3.5 rounded-xl p-3 transition-colors duration-200 hover:bg-raised">
                                     <span class="mt-0.5 flex size-8 shrink-0 items-center justify-center rounded-lg border border-line bg-raised text-muted transition-colors duration-200 group-hover:border-accent/40 group-hover:text-accent">
-                                        <svg viewBox="0 0 20 20" class="size-4 fill-current" aria-hidden="true">
-                                            <path d="M3.5 3A1.5 1.5 0 0 0 2 4.5v11A1.5 1.5 0 0 0 3.5 17h13a1.5 1.5 0 0 0 1.5-1.5v-11A1.5 1.5 0 0 0 16.5 3h-13ZM5 6.75A.75.75 0 0 1 5.75 6h8.5a.75.75 0 0 1 0 1.5h-8.5A.75.75 0 0 1 5 6.75ZM5.75 9.5a.75.75 0 0 0 0 1.5h8.5a.75.75 0 0 0 0-1.5h-8.5Zm0 3.5a.75.75 0 0 0 0 1.5h4.5a.75.75 0 0 0 0-1.5h-4.5Z"/>
+                                        <svg viewBox="0 0 16 16" class="size-4 fill-current" aria-hidden="true">
+                                            <path fill-rule="evenodd" d="M2 8a.75.75 0 0 1 .75-.75h8.69L8.22 4.03a.75.75 0 0 1 1.06-1.06l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 0 1-1.06-1.06l3.22-3.22H2.75A.75.75 0 0 1 2 8Z" clip-rule="evenodd"/>
                                         </svg>
                                     </span>
                                     <span>
-                                        <span class="block text-sm font-medium text-ink">Updates</span>
-                                        <span class="mt-0.5 block text-[13px] leading-snug text-muted">Stories, releases, and ideas from the team</span>
+                                        <span class="block text-sm font-medium text-ink">{{ $child->text }}</span>
                                     </span>
                                 </a>
-
-                                <a href="/changelog" class="group flex items-start gap-3.5 rounded-xl p-3 transition-colors duration-200 hover:bg-raised">
-                                    <span class="mt-0.5 flex size-8 shrink-0 items-center justify-center rounded-lg border border-line bg-raised text-muted transition-colors duration-200 group-hover:border-accent/40 group-hover:text-accent">
-                                        <svg viewBox="0 0 20 20" class="size-4 fill-current" aria-hidden="true">
-                                            <path fill-rule="evenodd" d="M10 2a8 8 0 1 0 8 8 .75.75 0 0 1 1.5 0A9.5 9.5 0 1 1 10 .5a.75.75 0 0 1 0 1.5Zm.75 4.25a.75.75 0 0 0-1.5 0v4.06c0 .199.079.39.22.53l2.5 2.5a.75.75 0 1 0 1.06-1.06l-2.28-2.28V6.25Zm5.03-3.53a.75.75 0 0 1 1.06 0l.72.72.72-.72a.75.75 0 1 1 1.06 1.06l-.72.72.72.72a.75.75 0 1 1-1.06 1.06l-.72-.72-.72.72a.75.75 0 1 1-1.06-1.06l.72-.72-.72-.72a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd"/>
-                                        </svg>
-                                    </span>
-                                    <span>
-                                        <span class="block text-sm font-medium text-ink">Changelog</span>
-                                        <span class="mt-0.5 block text-[13px] leading-snug text-muted">New features and fixes, shipped weekly</span>
-                                    </span>
-                                </a>
-
-                                <a href="/docs" class="group flex items-start gap-3.5 rounded-xl p-3 transition-colors duration-200 hover:bg-raised">
-                                    <span class="mt-0.5 flex size-8 shrink-0 items-center justify-center rounded-lg border border-line bg-raised text-muted transition-colors duration-200 group-hover:border-accent/40 group-hover:text-accent">
-                                        <svg viewBox="0 0 20 20" class="size-4 fill-current" aria-hidden="true">
-                                            <path d="M10.75 16.82A7.462 7.462 0 0 1 15 15.5c.71 0 1.396.098 2.046.282A.75.75 0 0 0 18 15.06v-11a.75.75 0 0 0-.546-.721A9.006 9.006 0 0 0 15 3a8.963 8.963 0 0 0-4.25 1.065V16.82ZM9.25 4.065A8.963 8.963 0 0 0 5 3c-.85 0-1.673.118-2.454.339A.75.75 0 0 0 2 4.06v11a.75.75 0 0 0 .954.721A7.506 7.506 0 0 1 5 15.5c1.579 0 3.042.487 4.25 1.32V4.065Z"/>
-                                        </svg>
-                                    </span>
-                                    <span>
-                                        <span class="block text-sm font-medium text-ink">Docs</span>
-                                        <span class="mt-0.5 block text-[13px] leading-snug text-muted">Guides and reference for getting set up</span>
-                                    </span>
-                                </a>
+                                @endforeach
                             </div>
 
                             <!-- Right: the latest from Updates -->
@@ -119,6 +95,12 @@
                         </div>
                     </div>
                 </li>
+                @else
+                <li>
+                    <a href="{{ $link->url }}" class="rounded-lg px-3 py-2 transition-colors duration-200 hover:text-ink aria-[current]:text-ink">{{ $link->text }}</a>
+                </li>
+                @endif
+                @endforeach
             </ul>
         </nav>
 
@@ -152,11 +134,15 @@
     <div data-mobile-panel class="border-b border-line bg-canvas/90 backdrop-blur-xl lg:hidden">
         <nav class="mx-auto w-full max-w-6xl px-6 py-4" aria-label="Mobile">
             <ul role="list" class="flex flex-col text-base">
-                <li><a href="/features" class="flex rounded-lg px-3 py-2.5 text-ink hover:bg-raised">Features</a></li>
-                <li><a href="/pricing" class="flex rounded-lg px-3 py-2.5 text-ink hover:bg-raised">Pricing</a></li>
-                <li><a href="/updates" class="flex rounded-lg px-3 py-2.5 text-ink hover:bg-raised">Updates</a></li>
-                <li><a href="/changelog" class="flex rounded-lg px-3 py-2.5 text-ink hover:bg-raised">Changelog</a></li>
-                <li><a href="/docs" class="flex rounded-lg px-3 py-2.5 text-ink hover:bg-raised">Docs</a></li>
+                @foreach ($links as $link)
+                @if ($link->children ?? false)
+                @foreach ($link->children as $child)
+                <li><a href="{{ $child->url }}" class="flex rounded-lg px-3 py-2.5 text-ink hover:bg-raised">{{ $child->text }}</a></li>
+                @endforeach
+                @else
+                <li><a href="{{ $link->url }}" class="flex rounded-lg px-3 py-2.5 text-ink hover:bg-raised">{{ $link->text }}</a></li>
+                @endif
+                @endforeach
             </ul>
             <div class="mt-4 flex items-center gap-3 border-t border-line pt-4">
                 <a href="{{ $signInLink }}" class="flex-1 rounded-full border border-line px-4 py-2.5 text-center text-sm text-ink hover:bg-raised">{{ $signInText }}</a>

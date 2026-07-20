@@ -8,6 +8,22 @@ fields:
         type: text
         label: Brand name
         default: "Draft"
+    links:
+        type: repeater
+        label: Navigation links
+        description: "Nest links under an item to create a dropdown."
+        nestable: true
+        add_button_label: "Add link"
+        item_label: text
+        sub_fields:
+            text:
+                type: text
+                label: Text
+                default: "New link"
+            url:
+                type: url
+                label: Link
+                default: "/"
     signInText:
         type: text
         label: Sign-in link text

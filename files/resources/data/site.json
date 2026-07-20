@@ -1,0 +1,15 @@
+{
+    "nav_links": [
+        { "text": "Features", "url": "/features" },
+        { "text": "Pricing", "url": "/pricing" },
+        {
+            "text": "Resources",
+            "url": "#",
+            "children": [
+                { "text": "Updates", "url": "/updates" },
+                { "text": "Changelog", "url": "/changelog" },
+                { "text": "Docs", "url": "/docs" }
+            ]
+        }
+    ]
+}

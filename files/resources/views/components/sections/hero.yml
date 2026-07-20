@@ -12,6 +12,11 @@ fields:
         type: textarea
         label: Supporting copy
         default: "Purpose-built for the whole delivery loop — issues, cycles, releases, and the changelog your customers actually read."
+    showNew:
+        type: toggle
+        label: Show announcement
+        description: Turn off to hide the announcement link beside the subcopy.
+        default: "1"
     newLabel:
         type: text
         label: Announcement label
