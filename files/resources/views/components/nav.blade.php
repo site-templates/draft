@@ -17,7 +17,7 @@
     delay (so diagonal pointer travel never slams it shut), click toggles it on
     touch, Escape dismisses. All of that lives in public/js/main.js.
 -->
-<header id="header" class="fixed inset-x-0 top-0 z-50">
+<header id="header" class="fixed inset-x-0 top-0 z-50 h-16 [.menu-open_&]:h-auto">
     <div class="mx-auto flex h-16 w-full max-w-6xl items-center gap-6 px-6">
 
         <!-- href="/" always points to your site's root, in preview and when published -->
