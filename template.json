@@ -8,6 +8,10 @@
     "category": "landing",
     "theme": "dark",
     "accent": "#e6e7eb",
+    "themeable": true,
+    "palette": "graphite",
+    "fonts": "geist",
+    "appearance": "dark",
     "pages": [
         "Home",
         "Features",

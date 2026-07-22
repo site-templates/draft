@@ -8,24 +8,26 @@
 */
 
 @theme {
-    --font-sans: 'Geist', ui-sans-serif, system-ui, sans-serif;
-    --font-display: 'Geist', ui-sans-serif, system-ui, sans-serif;
     --font-mono: 'Geist Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace;
 
-    /* The dark canvas and its raised surfaces */
-    --color-canvas: #08090b;
-    --color-panel: #0e1014;
-    --color-raised: #15171c;
-    --color-line: #212329;
+    /*
+        The palette, aliased onto the semantic theme tokens in
+        resources/css/theme.css — change the theme and the whole site follows.
+        Sans/display fonts live there too.
+    */
+    --color-canvas: var(--background);
+    --color-panel: var(--card);
+    --color-raised: var(--secondary);
+    --color-line: var(--border);
 
     /* Text */
-    --color-ink: #f7f8f8;
-    --color-muted: #9a9fa8;
-    --color-faint: #676c76;
+    --color-ink: var(--foreground);
+    --color-muted: var(--muted-foreground);
+    --color-faint: color-mix(in oklab, var(--muted-foreground) 62%, var(--background));
 
     /* The accent — near-white on this monochrome template, used sparingly */
-    --color-accent: #e6e7eb;
-    --color-accent-soft: #26272c;
+    --color-accent: var(--primary);
+    --color-accent-soft: color-mix(in oklab, var(--primary) 12%, var(--background));
 
     /* One easing for everything interactive: fast in, long soft settle */
     --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);

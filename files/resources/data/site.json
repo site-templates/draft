@@ -1,14 +1,43 @@
 {
+    "name": "Draft",
+    "theme": {
+        "palette": "graphite",
+        "fonts": "geist",
+        "fonts_url": "https://fonts.googleapis.com/css2?family=Geist:wght@400..650&family=Geist+Mono:wght@400;500&display=swap",
+        "appearance": "dark",
+        "appearance_class": "dark"
+    },
     "nav_links": [
-        { "text": "Features", "url": "/features" },
-        { "text": "Pricing", "url": "/pricing" },
+        {
+            "text": "Features",
+            "url": "/features"
+        },
+        {
+            "text": "Pricing",
+            "url": "/pricing"
+        },
         {
             "text": "Resources",
             "url": "#",
             "children": [
-                { "text": "Updates", "url": "/updates" },
-                { "text": "Changelog", "url": "/changelog" },
-                { "text": "Docs", "url": "/docs" }
+                {
+                    "text": "Updates",
+                    "url": "/updates",
+                    "description": "Stories, releases, and ideas from the team",
+                    "icon": "<svg viewBox='0 0 20 20' class='size-4 fill-current' aria-hidden='true'><path d='M3.5 3A1.5 1.5 0 0 0 2 4.5v11A1.5 1.5 0 0 0 3.5 17h13a1.5 1.5 0 0 0 1.5-1.5v-11A1.5 1.5 0 0 0 16.5 3h-13ZM5 6.75A.75.75 0 0 1 5.75 6h8.5a.75.75 0 0 1 0 1.5h-8.5A.75.75 0 0 1 5 6.75ZM5.75 9.5a.75.75 0 0 0 0 1.5h8.5a.75.75 0 0 0 0-1.5h-8.5Zm0 3.5a.75.75 0 0 0 0 1.5h4.5a.75.75 0 0 0 0-1.5h-4.5Z'/></svg>"
+                },
+                {
+                    "text": "Changelog",
+                    "url": "/changelog",
+                    "description": "New features and fixes, shipped weekly",
+                    "icon": "<svg viewBox='0 0 20 20' class='size-4 fill-current' aria-hidden='true'><path fill-rule='evenodd' d='M10 2a8 8 0 1 0 8 8 .75.75 0 0 1 1.5 0A9.5 9.5 0 1 1 10 .5a.75.75 0 0 1 0 1.5Zm.75 4.25a.75.75 0 0 0-1.5 0v4.06c0 .199.079.39.22.53l2.5 2.5a.75.75 0 1 0 1.06-1.06l-2.28-2.28V6.25Zm5.03-3.53a.75.75 0 0 1 1.06 0l.72.72.72-.72a.75.75 0 1 1 1.06 1.06l-.72.72.72.72a.75.75 0 1 1-1.06 1.06l-.72-.72-.72.72a.75.75 0 1 1-1.06-1.06l.72-.72-.72-.72a.75.75 0 0 1 0-1.06Z' clip-rule='evenodd'/></svg>"
+                },
+                {
+                    "text": "Docs",
+                    "url": "/docs",
+                    "description": "Guides and reference for getting set up",
+                    "icon": "<svg viewBox='0 0 20 20' class='size-4 fill-current' aria-hidden='true'><path d='M10.75 16.82A7.462 7.462 0 0 1 15 15.5c.71 0 1.396.098 2.046.282A.75.75 0 0 0 18 15.06v-11a.75.75 0 0 0-.546-.721A9.006 9.006 0 0 0 15 3a8.963 8.963 0 0 0-4.25 1.065V16.82ZM9.25 4.065A8.963 8.963 0 0 0 5 3c-.85 0-1.673.118-2.454.339A.75.75 0 0 0 2 4.06v11a.75.75 0 0 0 .954.721A7.506 7.506 0 0 1 5 15.5c1.579 0 3.042.487 4.25 1.32V4.065Z'/></svg>"
+                }
             ]
         }
     ]
