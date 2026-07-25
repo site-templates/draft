@@ -2,7 +2,7 @@
     'title' => '',
     'description' => '',
     'section' => 'Documentation',
-    'nav',
+    'nav' => [],
 ])
 <!--
     The chrome for a docs page: a sticky sidebar built from the docs collection
@@ -24,18 +24,20 @@
                     Docs
                 </a>
 
-                <nav class="mt-6" aria-label="Documentation" data-doc-nav>
-                    <p class="font-mono text-[11px] font-medium tracking-widest text-faint uppercase">Guides</p>
-                    <ul role="list" class="mt-3 flex flex-col gap-0.5 border-l border-line text-sm">
-                        @foreach ($nav as $item)
-                            <li>
-                                <a href="{{ $item->link }}" class="-ml-px block border-l border-transparent py-1.5 pl-4 text-muted transition-colors duration-200 hover:border-faint hover:text-ink aria-[current]:border-accent aria-[current]:font-medium aria-[current]:text-ink">
-                                    {{ $item->title }}
-                                </a>
-                            </li>
-                        @endforeach
-                    </ul>
-                </nav>
+                @if ($nav)
+                    <nav class="mt-6" aria-label="Documentation" data-doc-nav>
+                        <p class="font-mono text-[11px] font-medium tracking-widest text-faint uppercase">Guides</p>
+                        <ul role="list" class="mt-3 flex flex-col gap-0.5 border-l border-line text-sm">
+                            @foreach ($nav as $item)
+                                <li>
+                                    <a href="{{ $item->link }}" class="-ml-px block border-l border-transparent py-1.5 pl-4 text-muted transition-colors duration-200 hover:border-faint hover:text-ink aria-[current]:border-accent aria-[current]:font-medium aria-[current]:text-ink">
+                                        {{ $item->title }}
+                                    </a>
+                                </li>
+                            @endforeach
+                        </ul>
+                    </nav>
+                @endif
             </aside>
 
             <!-- Article -->
