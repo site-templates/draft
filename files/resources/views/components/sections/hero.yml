@@ -7,7 +7,7 @@ fields:
     heading:
         type: text
         label: Heading
-        default: "The workspace where software ships"
+        default: "Build software that people love."
     body:
         type: textarea
         label: Supporting copy

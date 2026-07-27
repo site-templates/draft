@@ -1,5 +1,5 @@
 @props([
-    'heading' => 'The workspace where software ships',
+    'heading' => 'Build software that people love.',
     'body' => 'Purpose-built for the whole delivery loop — issues, cycles, releases, and the changelog your customers actually read.',
     'showNew' => '1',
     'newLabel' => 'New',
