@@ -1,0 +1,11 @@
+# Column types for docs.json — the source of truth the builder
+# reads: richtext columns open in the rich editor (Content drawer
+# and any section repeater listing this collection).
+fields:
+    title: { type: text }
+    description: { type: textarea }
+    link: { type: url }
+    icon: { type: textarea }
+    slug: { type: text }
+    section: { type: text }
+    content: { type: richtext }
