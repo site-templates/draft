@@ -24,6 +24,17 @@ fields:
                 type: url
                 label: Link
                 default: "/"
+            description:
+                type: text
+                label: Description
+                description: "Shown under the title inside a dropdown. Top-level links ignore it."
+                default: ""
+            icon:
+                type: textarea
+                label: Icon (SVG)
+                description: "Raw SVG for a dropdown item's badge — use class='size-4 fill-current'. Empty falls back to an arrow."
+                rows: 3
+                default: ""
     signInText:
         type: text
         label: Sign-in link text

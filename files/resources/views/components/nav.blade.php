@@ -60,13 +60,26 @@
                             <div class="flex flex-col gap-0.5 p-1">
                                 @foreach ($link->children as $child)
                                 <a href="{{ $child->url }}" class="group flex items-start gap-3.5 rounded-xl p-3 transition-colors duration-200 hover:bg-raised">
+                                    {{--
+                                        Each child carries its own icon (raw SVG) and description in
+                                        the nav_links entry — see resources/data/site.json. Both are
+                                        optional: without an icon the generic arrow stands in, and
+                                        without a description the row is just its title.
+                                    --}}
                                     <span class="mt-0.5 flex size-8 shrink-0 items-center justify-center rounded-lg border border-line bg-raised text-muted transition-colors duration-200 group-hover:border-accent/40 group-hover:text-accent">
+                                        @if ($child->icon ?? false)
+                                        {!! $child->icon !!}
+                                        @else
                                         <svg viewBox="0 0 16 16" class="size-4 fill-current" aria-hidden="true">
                                             <path fill-rule="evenodd" d="M2 8a.75.75 0 0 1 .75-.75h8.69L8.22 4.03a.75.75 0 0 1 1.06-1.06l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 0 1-1.06-1.06l3.22-3.22H2.75A.75.75 0 0 1 2 8Z" clip-rule="evenodd"/>
                                         </svg>
+                                        @endif
                                     </span>
                                     <span>
                                         <span class="block text-sm font-medium text-ink">{{ $child->text }}</span>
+                                        @if ($child->description ?? false)
+                                        <span class="mt-0.5 block text-[13px] leading-snug text-pretty text-muted">{{ $child->description }}</span>
+                                        @endif
                                     </span>
                                 </a>
                                 @endforeach
